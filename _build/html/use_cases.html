@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Use Cases &mdash; Konfyt 1.1.1-testing documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What’s New" href="versions.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Konfyt
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-first-steps">The first steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-with-zynaddsubfx-and-ardour">Example with ZynAddSubFX and Ardour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-ideas">More ideas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">What’s New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Konfyt</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Use Cases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/use_cases.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="use-cases">
+<h1>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-first-steps">
+<h2>The first steps<a class="headerlink" href="#the-first-steps" title="Permalink to this headline">¶</a></h2>
+<p>Perform these steps to set up Konfyt and get going:</p>
+<ol class="arabic simple">
+<li>Specify paths in Settings and let your instrument directories be scanned to
+fill the library.</li>
+<li>In the <em>Ports and Busses</em> screen, assign a client to the MIDI input port.
+Access to ALSA hardware can be gained by using the command
+<code class="docutils literal notranslate"><span class="pre">a2jmidid</span> <span class="pre">-e</span> <span class="pre">-u</span></code>
+It is also useful to add this command to the <em>External Applications</em> list so
+it can easily be run next time.</li>
+<li>Test MIDI input by watching the MIDI receive indicator at the top right or by
+selecting <em>Show MIDI Messages</em> at the console and watching the console.</li>
+<li>In the <em>Ports and Busses</em> screen, connect the audio bus(es) to system output
+or JACK clients.</li>
+<li>Add a SFZ or soundfont layer to the patch and test your audio.</li>
+<li>Remember to enter a project name and save often!</li>
+</ol>
+</div>
+<div class="section" id="example-with-zynaddsubfx-and-ardour">
+<h2>Example with ZynAddSubFX and Ardour<a class="headerlink" href="#example-with-zynaddsubfx-and-ardour" title="Permalink to this headline">¶</a></h2>
+<p>Konfyt doesn’t attempt to do everything itself but works in harmony with other
+JACK aware applications. This example shows how Konfyt can be used in combination
+with a stand-alone synth application and a plugin host.</p>
+<ol class="arabic">
+<li><p class="first">Create a new Konfyt project, connect the MIDI input port, verify that you
+receive MIDI and save the project.</p>
+<p>Take note of the project path. If you forgot, you can quickly find it by
+clicking the <em>Project Directory</em> button in the <em>Filesystem</em> tab on the
+left-hand side of the Konfyt window.</p>
+</li>
+<li><p class="first">Launch ZynAddSubFX and select or create a desired preset.</p>
+</li>
+<li><p class="first">Save your ZynAddSubFX session (File-&gt;Save All Parameters…) to your Konfyt
+project directory as “zyn_lead.xmz” for example.</p>
+</li>
+<li><p class="first">In Konfyt, navigate to the saved file in the <em>Filesystem</em> tab, right-click on
+it and select <em>Add Path To External App Box (Relative to Project)</em>.</p>
+<p>The <em>External Applications</em> text box should now contain something like
+“$PROJ_DIR$/zyn_lead.xmz”.</p>
+</li>
+<li><p class="first">Add “zynaddsubfx -l ” to the beginning of the text. The -l argument tells Zyn
+you want to load the file.</p>
+</li>
+<li><p class="first">Now, in the event that you might use another instance of ZynAddSubFX,
+you want the JACK port names of this instance to be uniquely identifiable and
+remain the same across sessions. To ensure this, add ” -N zyn_lead” at the
+end of the command. This makes ZynAddSubFX append the “zyn_lead” string to
+its port names.</p>
+<p>The command should now look like this:
+<code class="docutils literal notranslate"><span class="pre">zynaddsubfx</span> <span class="pre">-l</span> <span class="pre">&quot;$PROJ_DIR$/zyn_lead.xmz&quot;</span> <span class="pre">-N</span> <span class="pre">zyn_lead</span></code></p>
+</li>
+<li><p class="first">Click <em>Add</em> to add it to the list.</p>
+</li>
+<li><p class="first">Close ZynAddSubFX. Then double-click on the newly added entry in the
+<em>External Applications</em> list to test it. ZynAddSubFX should start up with the
+appropriate settings loaded from the file.</p>
+</li>
+<li><p class="first">In the <em>Ports and Busses</em> screen, add a new MIDI output port, name it
+“zyn lead send” and connect it to the ZynAddSubFX midi_input port.</p>
+</li>
+<li><p class="first">Add an audio input port, name it “zyn lead return” and connect it to the
+ZynAddSubFX out_1 and out_2 ports.</p>
+</li>
+<li><p class="first">Create a new patch and add the newly created MIDI output port and audio input
+port as layers. When you play notes, MIDI is now sent to Zyn and the audio is
+returned to Konfyt. The audio is routed to the output bus specified in the
+audio input port layer.</p>
+</li>
+<li><p class="first">Now, we might want to apply some effects like reverb and EQ to the Zyn audio.
+Open a plugin host, for example Ardour. Create a new project, saving it to
+the Konfyt project directory and adding it as an external application command
+like before. (Note that the -l and -N arguments that were used above are
+specific to Zyn and not applicable to Ardour.)</p>
+</li>
+<li><p class="first">In Ardour, create an audio bus and add reverb and/or other effects plugins to it.</p>
+</li>
+<li><p class="first">In Konfyt, in the <em>Ports and Busses</em> screen, add a bus, naming it “Ardour Effects”
+for example and selecting the Ardour audio bus/track as its clients to connect to.</p>
+</li>
+<li><p class="first">In the patch, on the audio input port layer, click the <em>Bus</em> button on the
+right hand side and select the newly created bus. Now, the audio from Zyn will
+be routed to Ardour for some cool effects.</p>
+</li>
+</ol>
+<p>Remember to save your Konfyt project regularly.</p>
+<p>When done, close Konfyt, Ardour and Zyn, re-open Konfyt, launch Ardour and Zyn
+from the <em>External Applications</em> list and test that everything still works.
+If everything was set up correctly, the JACK port connections should automatically
+be connected and everything should work as before.</p>
+</div>
+<div class="section" id="more-ideas">
+<h2>More ideas<a class="headerlink" href="#more-ideas" title="Permalink to this headline">¶</a></h2>
+<p>Some applications that might augment your workflow with Konfyt are:</p>
+<ul class="simple">
+<li>Carla, Ardour and other plugin hosts.</li>
+<li>mididings, QMidiRoute for more advanced MIDI filtering and routing.</li>
+<li>a2jmidid with the <code class="docutils literal notranslate"><span class="pre">-e</span></code> argument to get access to ALSA hardware and software MIDI
+ports and the <code class="docutils literal notranslate"><span class="pre">-u</span></code> argument to remove ALSA port numbers from port names.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="versions.html" class="btn btn-neutral float-right" title="What’s New" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gideon van der Kolf
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
