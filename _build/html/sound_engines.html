@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>What’s New &mdash; Konfyt 1.1.1-testing documentation</title>
+  <title>Sound Engines &mdash; Konfyt 1.1.1-testing documentation</title>
   
 
   
@@ -36,7 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Use Cases" href="use_cases.html" /> 
+    <link rel="next" title="Use Cases" href="use_cases.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,15 +85,18 @@
               <p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What’s New</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#v1-1-2">v1.1.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v1-1-1">v1.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v1-1-0">v1.1.0</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sound Engines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linuxsampler">Linuxsampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#carla">Carla</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sound Engines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linuxsampler">Linuxsampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#carla">Carla</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">What’s New</a></li>
 </ul>
 
             
@@ -139,13 +143,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>What’s New</li>
+      <li>Sound Engines</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/versions.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/sound_engines.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -158,50 +162,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="what-s-new">
-<h1>What’s New<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v1-1-2">
-<h2>v1.1.2<a class="headerlink" href="#v1-1-2" title="Permalink to this headline">¶</a></h2>
-<p>14 October 2020</p>
-<ul class="simple">
-<li>Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).</li>
-<li>Global sustain and pitchbend non-zero indicators.</li>
-<li>Fairly big code refactor under the hood, should not be noticeable to users.</li>
-<li>Fix bug of empty MIDI input ports added after removal of non-last port while
-console MIDI output is enabled.</li>
-<li>Small GUI tweaks.</li>
-</ul>
+  <div class="section" id="sound-engines">
+<h1>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline">¶</a></h1>
+<p>Konfyt fundamentally uses JACK (the JACK Audio Connection Kit) for MIDI and audio.</p>
+<p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
+<p>Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
+still used Linuxsampler as a backend for playing SFZs. However, the Linuxsampler
+support became troublesome and (among other reasons) Carla moved to SFZero to
+handle SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
+support using the LSCP (Linuxsampler Control Protocol) library.</p>
+<p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
+Linuxsampler is used by default if no command-line arguments are specified.</p>
+<div class="section" id="linuxsampler">
+<h2>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline">¶</a></h2>
+<p>LSCP is used to communicate with Linuxsampler. At startup, if LSCP fails to
+initialise, it is assumed that Linuxsampler is not running and a Linuxsampler
+process is started. Then LSCP initialisation is retried.</p>
+<p>Linuxsampler audio and MIDI JACK engines are created. The JACK client name is
+derived from Konfyt’s JACK client name. If Linuxsampler engines with the same
+name already exists, it is assumed to be from a previous Konfyt instance that
+is no longer running and the engines and related SFZ instruments are removed
+before new ones are created for the current session.</p>
+<p>Multiple instances of Konfyt can coexist since JACK requires that each client
+have a unique name.</p>
+<p>When a SFZ layer is added in Konfyt, the instrument is loaded in Linuxsampler
+using LSCP. A MIDI port and two audio ports are created for the instrument.
+Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
+connect these to the Linuxsampler ports in order to transfer MIDI and audio
+between Konfyt and Linuxsampler.</p>
 </div>
-<div class="section" id="v1-1-1">
-<h2>v1.1.1<a class="headerlink" href="#v1-1-1" title="Permalink to this headline">¶</a></h2>
-<p>10 October 2020</p>
-<ul class="simple">
-<li>Preview mode options: MIDI input port and channel, output bus.</li>
-<li>MIDI input port and bus menus now have a link to the connections page.</li>
-<li>Save-as finally implemented.</li>
-<li>Compatible with Carla 2.2.0 (API change).</li>
-<li>Default global and layer gain (volume) is now 1.0.</li>
-<li>SF3 soundfonts are now detected and loaded.</li>
-<li>Current setting is marked in MIDI channel/port/bus menus.</li>
-<li>Small GUI tweaks.</li>
-</ul>
-</div>
-<div class="section" id="v1-1-0">
-<h2>v1.1.0<a class="headerlink" href="#v1-1-0" title="Permalink to this headline">¶</a></h2>
-<p>27 December 2019</p>
-<ul class="simple">
-<li>MIDI send events: each MIDI output layer can have MIDI send events associated
-with it which are sent when the patch is activated. MIDI send events can also
-be saved for future use in other projects.</li>
-<li>MIDI note names octave numbers changed to the IPN standard to match most other
-software numbering.</li>
-<li>Always-active option for patches: a patch can be set to always be active, even
-if it is not the current patch.</li>
-<li>GUI uses system specified font size and resizes properly based on font size.</li>
-<li>Fluidsynth 2 support.</li>
-<li>Config files saved to standard XDG directories.</li>
-<li>Carla support optional.</li>
-</ul>
+<div class="section" id="carla">
+<h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline">¶</a></h2>
+<p>If the user wants to use Carla for SFZ support, the appropriate command-line
+argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
+<p>The Carla backend runs inside Konfyt but MIDI and audio is exchanged similar to
+with Linuxsampler, using JACK ports.</p>
 </div>
 </div>
 
@@ -213,8 +208,10 @@ if it is not the current patch.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="use_cases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="use_cases.html" class="btn btn-neutral float-left" title="Use Cases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
