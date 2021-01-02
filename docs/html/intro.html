@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; Konfyt 1.1.1-testing documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Use Cases" href="use_cases.html" />
+    <link rel="prev" title="Konfyt Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Konfyt
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concept">Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-manager">File Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#projects-directory">Projects Directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scanning">Scanning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#library">Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#projects">Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ports-and-buses">Ports and Buses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#midi-input-ports">MIDI Input Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio-bus-output-port">Audio Bus (Output Port)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#midi-output-ports">MIDI Output Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio-input-ports">Audio Input Ports</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#midi-triggers">MIDI Triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-applications">External Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">What’s New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Konfyt</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Konfyt is a digital keyboard workstation for Linux. It allows you to instantly switch
+between patches for live keyboard playing. Each patch can contain multiple layers of
+soundfont (SF2 or SFZ) instruments, as well as audio input ports from, and MIDI output
+ports to other apps or hardware. Konfyt also has a searchable library which scans your
+filesystem for instruments and lets you easily browse and search soundfont contents.</p>
+<p>Konfyt originally started out in 2014 as a library for soundfonts for quick viewing of
+contents since the existing methods was frustrating. From there it got SFZ support and
+eventually grew into a fully fledged live keyboard playing tool (“workstation”).</p>
+</div>
+<div class="section" id="concept">
+<h2>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<p>Konfyt is a stand-alone application that uses JACK for audio and MIDI input and output.</p>
+<p>Konfyt hosts SF2 and SFZ instruments and does audio and MIDI routing. Additional tasks such
+as effects and synth plugins must be done outside Konfyt by other software. Konfyt is
+designed to easily integrate into the Linux pro audio world. It allows you to use all
+your other JACK aware software while filling the gap of routing audio
+and MIDI in a very user friendly way with instant patch switching and other useful
+features geared towards live keyboard playing.</p>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Scan filesystem for soundfonts and SFZs and organize it into a tree view for easy navigation.</li>
+<li>List soundfont contents (programs) by simply selecting a soundfont in the library.</li>
+<li>Search library for SFZs and soundfonts, including soundfont programs.</li>
+<li>Uninterrupted patch switching - when holding notes or sustain while switching patches, sound keeps on playing until release.</li>
+<li>Audio input ports, which can be inserted into patches as layers, allowing audio to be received from other applications or from system input.</li>
+<li>MIDI output ports, which can be inserted into patches as layers, allowing MIDI output to other applications or to hardware.</li>
+<li>Audio output busses, allowing the output of SFZ, soundfont and audio-in layers to be sent to different destinations.</li>
+<li>Port connections to other JACK clients are automatically persisted.</li>
+<li>Per layer MIDI filter including key zone, transpose, velocity filtering and MIDI CC filtering.</li>
+<li>Assign MIDI triggers to actions such as switching patches and modifying layer volume, mute and solo.</li>
+<li>MIDI events (including Sysex messages) can automatically be sent to an output port when a patch is activated - useful to change programs and modes on an external synthesizer.</li>
+<li>Per project external application launcher. Add commands and arguments for all external applications associated with your project to a list to easily launch them. Application files can be saved to the project directory and referenced relative to the directory, allowing for everything contained in a single directory and remaining in tact when the directory is moved.</li>
+<li>Filesystem browser to quickly load SFZs and soundfonts from directories not in the library.</li>
+<li>Live mode in which some actions can be controlled with the computer keyboard.</li>
+<li>Panic button which, when activated, mutes all sounds, stops all MIDI and emits MIDI all-notes-off messages as well as pitchbend zero and sustain pedal zero.</li>
+<li>Scalable GUI which fits comfortably on a 1366x768 laptop display.</li>
+</ul>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>It is a good idea to fill in all the options in the settings screen.</p>
+<div class="section" id="file-manager">
+<h3>File Manager<a class="headerlink" href="#file-manager" title="Permalink to this headline">¶</a></h3>
+<p>The file manager entry is optional and is provided in case your default file manager doesn’t play along well. You can test it by right-clicking on one of the library items and clicking <em>Open in File Manager</em>. If you receive an error message from your file manager, specify your preferred file manager in settings (e.g. either dolphin, nautilus, thunar, pcmanfm, etc.).</p>
+</div>
+<div class="section" id="projects-directory">
+<h3>Projects Directory<a class="headerlink" href="#projects-directory" title="Permalink to this headline">¶</a></h3>
+<p>This is the default directory for projects. This directory is scanned at startup and all the projects are listed in the projects Open menu for easy access. When saving a project you can seamlessly save it in this directory by accepting the proposed path (or choose No to select a different path).</p>
+</div>
+<div class="section" id="scanning">
+<h3>Scanning<a class="headerlink" href="#scanning" title="Permalink to this headline">¶</a></h3>
+<p>The <em>Apply and Rescan</em> button clears the database and scans the specified directories and subdirectories for SFZs, GIGs, soundfonts (sf2) and patches. This may take a while, especially with big soundfonts as each soundfont is loaded with Fluidsynth in order to extract its program information.</p>
+<p>The <em>Apply and Quick Scan</em> button leaves the soundfonts already in the database intact and only scans and loads new files not yet in the database.</p>
+</div>
+</div>
+<div class="section" id="library">
+<h2>Library<a class="headerlink" href="#library" title="Permalink to this headline">¶</a></h2>
+<p>In order to fill the library with instruments (patches, SFZs and sf2 soundfonts), a scan must first be performed from the settings screen.</p>
+<p>The library organizes sounds using subdirectories. Thus, for easy navigation it is useful to sort your sounds into subfolders, for example using categories like Piano, Strings, Organs, Pads, etc.</p>
+<p>When selecting a soundfont, the list of programs appear below the library tree. By double-clicking on a soundfont program or a SFZ or patch in the tree, the sound is added as a layer to the current patch.</p>
+<p>When searching, file names and program names within soundfonts are searched.</p>
+</div>
+<div class="section" id="projects">
+<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
+<p>A Konfyt project contains the following:</p>
+<ul class="simple">
+<li>Patches</li>
+<li>Ports (MIDI and audio input and output ports) with corresponding connections</li>
+<li>Audio input ports and output buses</li>
+<li>List of external applications</li>
+<li>Triggers - actions that are triggered by MIDI events</li>
+<li>List of “Other JACK Connections” - pairs of ports that will be persistently kept connected</li>
+</ul>
+<p>Each project is saved in its own directory. A project directory contains the project file - an XML file with a name ending with “.konfytproject” - and a “patches” folder containing the patches.</p>
+</div>
+<div class="section" id="ports-and-buses">
+<h2>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline">¶</a></h2>
+<p>Konfyt uses ports and buses to receive and send audio and MIDI. A bus is actually just an audio output port. Each port and bus directly relates to a JACK port and can be connected to other JACK ports (i.e. other applications or hardware input/output). Any connections specified within Konfyt are persistently maintained, even after other applications restart, hardware is reconnected or when disconnects are attempted from outside Konfyt.</p>
+<div class="section" id="midi-input-ports">
+<h3>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline">¶</a></h3>
+<p>A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI controller
+(e.g. keyboard) or other applications. The MIDI input is routed to one or more
+instrument layers inside patches. MIDI input ports are set up in the <em>Ports and Buses</em> screen.</p>
+<p>A MIDI input port also has a MIDI filter.</p>
+</div>
+<div class="section" id="audio-bus-output-port">
+<h3>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Permalink to this headline">¶</a></h3>
+<p>A bus is an audio output port which relates to 2 JACK audio ports (left and right).
+Audio buses output audio to other applications or to the system output. Buses are set up
+in the <em>Ports and Buses</em> screen. Each instrument layer outputs to a specific bus. Although a new project contains a default <em>Master Bus</em>, this is merely a name and there is nothing special about it.</p>
+</div>
+<div class="section" id="midi-output-ports">
+<h3>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Permalink to this headline">¶</a></h3>
+<p>A MIDI output port sends MIDI out from Konfyt to another application or hardware.
+To use a MIDI output port, it is added as a layer in a patch. Thus, MIDI will only be sent to the port when a patch is active with that contains a layer corresponding to the port. As a layer, it has its own MIDI filter, output destination port and output MIDI channel specific to that layer (i.e. it can be different for each patch).</p>
+</div>
+<div class="section" id="audio-input-ports">
+<h3>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Permalink to this headline">¶</a></h3>
+<p>An audio input port receives audio from other applications or hardware and routes it to a bus.
+To use an audio input port, it is added as a layer in a patch. Thus, audio will only be routed from an audio input port when a patch is active that contains a layer corresponding to that port. As a layer, it has its own gain slider and destination bus specific to that layer (i.e. it can be different for each patch).</p>
+</div>
+</div>
+<div class="section" id="midi-triggers">
+<h2>MIDI Triggers<a class="headerlink" href="#midi-triggers" title="Permalink to this headline">¶</a></h2>
+<p>Konfyt allows MIDI triggers (similar to “MIDI learn” in other applications) to be set up in order to perform an action when the specified MIDI message is received. MIDI triggers are set up in the <em>Triggers</em> screen. Received MIDI messages are shown on the right and can be assigned to actions on the left by using the <em>Assign</em> button or by selecting the event and double-clicking on the action (or vice versa).</p>
+<p>When bank select messages (CC0 and CC32) are directly followed by a program change message, the messages are grouped together as one bank and program message.</p>
+<p>MIDI message values are interpreted corresponding to the action it is assigned. For actions such as gain, the absolute MIDI value is used. For other actions such as patch switching or toggling a setting, the action is only triggered if the MIDI message value is larger than zero. This eliminates double triggering when a button or note sends both 127 and zero when pressed.</p>
+<p>MIDI events from all MIDI input ports are used for triggers.</p>
+</div>
+<div class="section" id="external-applications">
+<h2>External Applications<a class="headerlink" href="#external-applications" title="Permalink to this headline">¶</a></h2>
+<p>The <em>External Applications</em> list is a simple list that allows you to store commands in a project for easily running external applications. It can be used as a simple crude way to restore your session of applications every time you open the project.</p>
+<p>The string <code class="docutils literal notranslate"><span class="pre">$PROJ_DIR$</span></code> will be replaced by the current project directory. This can be used to make a project more self-contained by storing files used by external applications in the Konfyt project directory and using the string in arguments for the commands.</p>
+<p><strong>For instance</strong>, you may use Carla to host plugins:</p>
+<blockquote>
+<div><p>For synth plugins, MIDI output port layers send MIDI data from Konfyt to
+Carla and the synth audio is sent back to Konfyt using audio input port
+layers. For effect plugins, a Konfyt bus sends audio to the plugin.</p>
+<p>The external application command <code class="docutils literal notranslate"><span class="pre">carla</span> <span class="pre">/path/to/my_carla_project.carxp</span></code>
+is added to the <em>External Applications</em> list in order to quickly launch
+Carla next time with the correct project. However, another option is to
+save the Carla project file in your Konfyt project directory. Then, go to
+the <em>Filesystem</em> tab on the left-hand side of the Konfyt window, click on
+the <em>Project Directory</em> button, right-click on the Carla project file and
+select <em>Add Path to External App Box (Relative to Project)</em>. This adds the
+path of the Carla project file to the <em>External Applications</em> text box using
+the string <code class="docutils literal notranslate"><span class="pre">$PROJ_DIR$</span></code> to indicate that the file is relative to the
+Konfyt project directory. Just add “carla ” in front of the path so that it
+becomes <code class="docutils literal notranslate"><span class="pre">carla</span> <span class="pre">&quot;$PROJ_DIR$/my_carla_project.carxp&quot;</span></code> and click <em>Add</em> to
+add it to the <em>External Applications</em> list.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use_cases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Konfyt Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gideon van der Kolf
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
