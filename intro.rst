@@ -110,7 +110,7 @@ A Konfyt project contains the following:
 * Audio input ports and output buses
 * List of external applications
 * Triggers - actions that are triggered by MIDI events
-* List of "Other JACK Connections" - pairs of ports that will be persistently kept connected
+* List of "Other JACK Connections" - pairs of ports not belonging to Konfyt that will be persistently kept connected
 
 Each project is saved in its own directory. A project directory contains the project file - an XML file with a name ending with ".konfytproject" - and a "patches" folder containing the patches.
 
@@ -119,7 +119,9 @@ Each project is saved in its own directory. A project directory contains the pro
 Ports and Buses
 ===============
 
-Konfyt uses ports and buses to receive and send audio and MIDI. A bus is actually just an audio output port. Each port and bus directly relates to a JACK port and can be connected to other JACK ports (i.e. other applications or hardware input/output). Any connections specified within Konfyt are persistently maintained, even after other applications restart, hardware is reconnected or when disconnects are attempted from outside Konfyt.
+Konfyt uses ports and buses to receive and send audio and MIDI. A bus is actually just an audio output port. Each port and bus directly relates to a JACK port and can be connected to other JACK ports (i.e. other applications or hardware input/output).
+
+Any port connections specified within Konfyt are persistently maintained, even after other applications restart, hardware is reconnected or when disconnects are attempted from outside Konfyt.
 
 MIDI Input Ports
 ----------------
@@ -161,6 +163,47 @@ When bank select messages (CC0 and CC32) are directly followed by a program chan
 MIDI message values are interpreted corresponding to the action it is assigned. For actions such as gain, the absolute MIDI value is used. For other actions such as patch switching or toggling a setting, the action is only triggered if the MIDI message value is larger than zero. This eliminates double triggering when a button or note sends both 127 and zero when pressed.
 
 MIDI events from all MIDI input ports are used for triggers.
+
+Triggers that relate to patch layers will only affect the layers of the currently active patch.
+
+In addition to actions/triggers, the *Triggers* screen contains additional options that are saved in the project:
+
+* *Program Change messages with no bank select switch patches*: When this is enabled, if a program change MIDI
+  message is received on its own (without any preceding bank select messages), the patch will be changed based
+  on the message program number.
+* *Slider MIDI Pickup Range* specifies the range in which sliders will jump to the value of received MIDI messages.
+  A maximum range of 127 means that a slider will jump to any received MIDI message value. Lower ranges mean the
+  slider will only jump to ("pickup") the value when the difference between the slider value and the received
+  MIDI message value is in the range.
+
+
+
+Patch/layers View
+=================
+
+The main patch/layers view shows the currently active patch. Normally, audio and MIDI will only play from the
+currently active (currently visible) patch. Switching to another patch will deactivate the patch and activate
+the other patch. When switching away from a patch, audio output ports are faded out so a sudden audio drop isn't
+heard. For instrument layers with MIDI input and audio output, their sound will continue to be heard if notes
+or a sustain pedal are being held down. When the notes or sustain pedal are lifted, the appropriate messages are
+passed to the inactive patch.
+
+A patch can be set as *always active* from the *Patch Menu*. This will keep the patch active even when you switch
+to other patches.
+
+Below the layers section is a *Note* section in which you can place text that will be saved with the patch.
+
+MIDI output port layers have a *MIDI Send List*, which is a list of MIDI messages which will be sent out on the
+layer whenever the patch is activated. This is useful for switching programs on hardware when activating a patch.
+
+
+
+Other JACK Connections
+======================
+
+In the *Other Jack Connections* screen, JACK audio and MIDI ports not belonging to Konfyt can be connected
+to each other. Just like with Konfyt ports, these connections are persistently maintianed by Konfyt, even
+when another app tries to disconnect it or after other apps restart or hardware is reconnected.
 
 
 

@@ -1,67 +1,107 @@
 What's New
 ===============
 
-v1.1.2
-------
+[1.1.4] - April 2021
+--------------------
 
-14 October 2020
+Added
 
-* Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).
+- Basic MIDI pickup for layer and master gain sliders. Range setting can be
+  set in the Triggers page.
 
-* Global sustain and pitchbend non-zero indicators.
 
-* Fairly big code refactor under the hood, should not be noticeable to users.
+[1.1.3] - January 2021
+----------------------
 
-* Fix bug of empty MIDI input ports added after removal of non-last port while
+Added
+
+- Per-layer audio output indicator
+- Two Konfyt instances can now run in parallel, nicely sharing Linuxsampler
+- Orphaned Linuxsampler channels and devices (due to previous app instance crash)
+  are now cleaned up at startup
+- MIDI output port layer output (right-hand side) button now has link to port connections
+- Xrun messages show time since last xrun
+- Patch layers can now be reordered
+
+Removed
+
+- Removed multi-project tabs. They were rarely (never?) used, buggy and
+  resulted in unnecessary maintenance. Multiple app instances can be used
+  instead.
+
+Fixes
+
+- Fix crash when loading sfz file if Linuxsampler is not installed
+- Fix copying a patch pointing to original patch layers
+- Fix always-active patch volume not changed by global volume when other patch is active
+- SFZ engine startup delay handled better, fixes loading sfz files through
+  command-line when Linuxsampler is not running yet
+- Fix CC value not loaded correctly for MIDI Send Events
+
+Changed
+
+- Patch list behaviour and interaction improved
+- Code cleanup and organisation, largely concerning the database
+- Window title is now Patch - Project [Jack Client Name]
+- Sustain indication in GUI has threshold of 64
+- Bank/program messages received now handled per port and channel
+- MIDI filter screen last received messages only shown from associated port/layer
+
+
+[1.1.2] - October 2020
+----------------------
+
+Added
+
+- Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).
+- Global sustain and pitchbend non-zero indicators.
+
+Changed
+
+- Fairly big code refactor under the hood, should not be noticeable to users.
+- Fix bug of empty MIDI input ports added after removal of non-last port while
   console MIDI output is enabled.
-
-* Small GUI tweaks.
-
+- Small GUI tweaks.
 
 
-v1.1.1
-------
+[1.1.1] - October 2020
+----------------------
 
-10 October 2020
+Added
 
-* Preview mode options: MIDI input port and channel, output bus.
+- Preview mode options: MIDI input port and channel, output bus.
+- MIDI input port and bus menus now have a link to the connections page.
+- Save-as finally implemented.
+- Compatible with Carla 2.2.0 (API change)
 
-* MIDI input port and bus menus now have a link to the connections page.
+Changed
 
-* Save-as finally implemented.
-
-* Compatible with Carla 2.2.0 (API change).
-
-* Default global and layer gain (volume) is now 1.0.
-
-* SF3 soundfonts are now detected and loaded.
-
-* Current setting is marked in MIDI channel/port/bus menus.
-
-* Small GUI tweaks.
+- Default global and layer gain (volume) is now 1.0.
+- SF3 soundfonts are now detected and loaded.
+- Current setting is marked in MIDI channel/port/bus menus
+- Small GUI tweaks.
 
 
+[1.1.0] - December 2019
+-----------------------
 
-v1.1.0
-------
+- Each patch can be set to send MIDI events to other apps/hardware when activated
+  and sysex messages are also now supported. MIDI send events can be saved for
+  reuse in other projects.
+- Fluidsynth 2 is also now supported.
+- Config files are now saved to standard XDG directories.
+- Carla support is now optional.
 
-27 December 2019
 
-* MIDI send events: each MIDI output layer can have MIDI send events associated
+[1.1.0-beta] - October 2019
+---------------------------
+
+- MIDI send events: each MIDI output layer can have MIDI send events associated
   with it which are sent when the patch is activated. MIDI send events can also
   be saved for future use in other projects.
-
-* MIDI note names octave numbers changed to the IPN standard to match most other
+- MIDI note names octave numbers changed to the IPN standard to match most other
   software numbering.
-
-* Always-active option for patches: a patch can be set to always be active, even
+- Always-active option for patches: a patch can be set to always be active, even
   if it is not the current patch.
-
-* GUI uses system specified font size and resizes properly based on font size.
-
-* Fluidsynth 2 support.
-
-* Config files saved to standard XDG directories.
-
-* Carla support optional.
+- GUI uses system specified font size and resizes properly based on font size.
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; Konfyt 1.1.1-testing documentation</title>
+  <title>Introduction &mdash; Konfyt 1.1.4 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Use Cases" href="use_cases.html" />
+    <link rel="next" title="Sound Engines" href="sound_engines.html" />
     <link rel="prev" title="Konfyt Documentation" href="index.html" /> 
 </head>
 
@@ -104,10 +104,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#midi-triggers">MIDI Triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patch-layers-view">Patch/layers View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-jack-connections">Other JACK Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-applications">External Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">What’s New</a></li>
 </ul>
 
@@ -251,13 +255,14 @@ features geared towards live keyboard playing.</p>
 <li>Audio input ports and output buses</li>
 <li>List of external applications</li>
 <li>Triggers - actions that are triggered by MIDI events</li>
-<li>List of “Other JACK Connections” - pairs of ports that will be persistently kept connected</li>
+<li>List of “Other JACK Connections” - pairs of ports not belonging to Konfyt that will be persistently kept connected</li>
 </ul>
 <p>Each project is saved in its own directory. A project directory contains the project file - an XML file with a name ending with “.konfytproject” - and a “patches” folder containing the patches.</p>
 </div>
 <div class="section" id="ports-and-buses">
 <h2>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline">¶</a></h2>
-<p>Konfyt uses ports and buses to receive and send audio and MIDI. A bus is actually just an audio output port. Each port and bus directly relates to a JACK port and can be connected to other JACK ports (i.e. other applications or hardware input/output). Any connections specified within Konfyt are persistently maintained, even after other applications restart, hardware is reconnected or when disconnects are attempted from outside Konfyt.</p>
+<p>Konfyt uses ports and buses to receive and send audio and MIDI. A bus is actually just an audio output port. Each port and bus directly relates to a JACK port and can be connected to other JACK ports (i.e. other applications or hardware input/output).</p>
+<p>Any port connections specified within Konfyt are persistently maintained, even after other applications restart, hardware is reconnected or when disconnects are attempted from outside Konfyt.</p>
 <div class="section" id="midi-input-ports">
 <h3>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline">¶</a></h3>
 <p>A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI controller
@@ -288,6 +293,37 @@ To use an audio input port, it is added as a layer in a patch. Thus, audio will 
 <p>When bank select messages (CC0 and CC32) are directly followed by a program change message, the messages are grouped together as one bank and program message.</p>
 <p>MIDI message values are interpreted corresponding to the action it is assigned. For actions such as gain, the absolute MIDI value is used. For other actions such as patch switching or toggling a setting, the action is only triggered if the MIDI message value is larger than zero. This eliminates double triggering when a button or note sends both 127 and zero when pressed.</p>
 <p>MIDI events from all MIDI input ports are used for triggers.</p>
+<p>Triggers that relate to patch layers will only affect the layers of the currently active patch.</p>
+<p>In addition to actions/triggers, the <em>Triggers</em> screen contains additional options that are saved in the project:</p>
+<ul class="simple">
+<li><em>Program Change messages with no bank select switch patches</em>: When this is enabled, if a program change MIDI
+message is received on its own (without any preceding bank select messages), the patch will be changed based
+on the message program number.</li>
+<li><em>Slider MIDI Pickup Range</em> specifies the range in which sliders will jump to the value of received MIDI messages.
+A maximum range of 127 means that a slider will jump to any received MIDI message value. Lower ranges mean the
+slider will only jump to (“pickup”) the value when the difference between the slider value and the received
+MIDI message value is in the range.</li>
+</ul>
+</div>
+<div class="section" id="patch-layers-view">
+<h2>Patch/layers View<a class="headerlink" href="#patch-layers-view" title="Permalink to this headline">¶</a></h2>
+<p>The main patch/layers view shows the currently active patch. Normally, audio and MIDI will only play from the
+currently active (currently visible) patch. Switching to another patch will deactivate the patch and activate
+the other patch. When switching away from a patch, audio output ports are faded out so a sudden audio drop isn’t
+heard. For instrument layers with MIDI input and audio output, their sound will continue to be heard if notes
+or a sustain pedal are being held down. When the notes or sustain pedal are lifted, the appropriate messages are
+passed to the inactive patch.</p>
+<p>A patch can be set as <em>always active</em> from the <em>Patch Menu</em>. This will keep the patch active even when you switch
+to other patches.</p>
+<p>Below the layers section is a <em>Note</em> section in which you can place text that will be saved with the patch.</p>
+<p>MIDI output port layers have a <em>MIDI Send List</em>, which is a list of MIDI messages which will be sent out on the
+layer whenever the patch is activated. This is useful for switching programs on hardware when activating a patch.</p>
+</div>
+<div class="section" id="other-jack-connections">
+<h2>Other JACK Connections<a class="headerlink" href="#other-jack-connections" title="Permalink to this headline">¶</a></h2>
+<p>In the <em>Other Jack Connections</em> screen, JACK audio and MIDI ports not belonging to Konfyt can be connected
+to each other. Just like with Konfyt ports, these connections are persistently maintianed by Konfyt, even
+when another app tries to disconnect it or after other apps restart or hardware is reconnected.</p>
 </div>
 <div class="section" id="external-applications">
 <h2>External Applications<a class="headerlink" href="#external-applications" title="Permalink to this headline">¶</a></h2>
@@ -322,7 +358,7 @@ add it to the <em>External Applications</em> list.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="use_cases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sound_engines.html" class="btn btn-neutral float-right" title="Sound Engines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Konfyt Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -335,7 +371,7 @@ add it to the <em>External Applications</em> list.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Gideon van der Kolf
+        &copy; Copyright 2021, Gideon van der Kolf
 
     </p>
   </div>
