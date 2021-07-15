@@ -130,14 +130,26 @@ A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI control
 (e.g. keyboard) or other applications. The MIDI input is routed to one or more
 instrument layers inside patches. MIDI input ports are set up in the *Ports and Buses* screen.
 
-A MIDI input port also has a MIDI filter.
+A MIDI input port also has its own MIDI filter, which filters all MIDI before it
+reaches any patches/layers. When a MIDI input port is selected on the Ports and Buses
+screen, a button appears below the connections list to access the MIDI filter settings.
 
 Audio Bus (Output Port)
 -----------------------
 
 A bus is an audio output port which relates to 2 JACK audio ports (left and right).
 Audio buses output audio to other applications or to the system output. Buses are set up
-in the *Ports and Buses* screen. Each instrument layer outputs to a specific bus. Although a new project contains a default *Master Bus*, this is merely a name and there is nothing special about it.
+in the *Ports and Buses* screen. Each instrument layer outputs to a specific bus.
+Although a new project contains a default *Master Bus*, this is merely a name and
+there is nothing special about it.
+
+An audio bus can be set to ignore (bypass) the master output volume. When an audio bus
+is selected on the Ports and Buses screen, a checkbox appears below the connections list
+to enable this. This is ideal for when you want to send some audio to another application
+for applying effects, and loop it back into Konfyt (return) for further routing.
+By enabling this option on the "send" bus, the audio level isn't reduced by the
+master volume setting, preventing it from being reduced multiple times (each time
+the signal leaves Konfyt).
 
 MIDI Output Ports
 -----------------
