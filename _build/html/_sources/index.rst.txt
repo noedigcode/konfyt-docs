@@ -16,6 +16,7 @@ Konfyt - Digital Keyboard Workstation for Linux
     sound_engines
     use_cases
     sound_engines
+    known_issues
     versions
     
 ..
