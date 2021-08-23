@@ -12,12 +12,12 @@ Konfyt - Digital Keyboard Workstation for Linux
     :maxdepth: 2
     :caption: Contents
 
-    intro
-    sound_engines
-    use_cases
-    sound_engines
-    known_issues
-    versions
+    content/intro
+    content/usage
+    content/sound_engines
+    content/use_cases
+    content/known_issues
+    content/versions
     
 ..
     This is it.

@@ -17,27 +17,27 @@
 
   
   <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
+    <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Use Cases" href="use_cases.html" />
-    <link rel="prev" title="Introduction" href="intro.html" /> 
+    <link rel="prev" title="Usage" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Konfyt
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Konfyt
           
 
           
@@ -64,7 +64,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -85,17 +85,14 @@
               <p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sound Engines</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#linuxsampler">Linuxsampler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#carla">Carla</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sound Engines</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linuxsampler">Linuxsampler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#carla">Carla</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">What’s New</a></li>
 </ul>
 
@@ -112,7 +109,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Konfyt</a>
+          <a href="../index.html">Konfyt</a>
         
       </nav>
 
@@ -141,7 +138,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Sound Engines</li>
     
@@ -149,7 +146,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/sound_engines.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/content/sound_engines.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,8 +165,8 @@
 <p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
 <p>Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
 still used Linuxsampler as a backend for playing SFZs. However, the Linuxsampler
-support became troublesome and (among other reasons) Carla moved to SFZero to
-handle SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
+support became troublesome and (among other reasons) Carla moved to SFZero for
+handling SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
 support using the LSCP (Linuxsampler Control Protocol) library.</p>
 <p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
 Linuxsampler is used by default if no command-line arguments are specified.</p>
@@ -186,16 +183,16 @@ before new ones are created for the current session.</p>
 <p>Multiple instances of Konfyt can coexist since JACK requires that each client
 have a unique name.</p>
 <p>When a SFZ layer is added in Konfyt, the instrument is loaded in Linuxsampler
-using LSCP. A MIDI port and two audio ports are created for the instrument.
+via LSCP. A MIDI port and two audio ports are created for the instrument in Linuxsampler.
 Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
-connect these to the Linuxsampler ports in order to transfer MIDI and audio
+automatically connects these to the Linuxsampler ports in order to transfer MIDI and audio
 between Konfyt and Linuxsampler.</p>
 </div>
 <div class="section" id="carla">
 <h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline">¶</a></h2>
 <p>If the user wants to use Carla for SFZ support, the appropriate command-line
 argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
-<p>The Carla backend runs inside Konfyt but MIDI and audio is exchanged similar to
+<p>The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
 with Linuxsampler, using JACK ports.</p>
 </div>
 </div>
@@ -211,7 +208,7 @@ with Linuxsampler, using JACK ports.</p>
         <a href="use_cases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

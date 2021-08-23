@@ -7,8 +7,8 @@ Fluidsynth is used to load, inspect and play sf2 soundfont files.
 
 Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
 still used Linuxsampler as a backend for playing SFZs. However, the Linuxsampler
-support became troublesome and (among other reasons) Carla moved to SFZero to
-handle SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
+support became troublesome and (among other reasons) Carla moved to SFZero for
+handling SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
 support using the LSCP (Linuxsampler Control Protocol) library.
 
 Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
@@ -31,9 +31,9 @@ Multiple instances of Konfyt can coexist since JACK requires that each client
 have a unique name.
 
 When a SFZ layer is added in Konfyt, the instrument is loaded in Linuxsampler
-using LSCP. A MIDI port and two audio ports are created for the instrument.
+via LSCP. A MIDI port and two audio ports are created for the instrument in Linuxsampler.
 Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
-connect these to the Linuxsampler ports in order to transfer MIDI and audio
+automatically connects these to the Linuxsampler ports in order to transfer MIDI and audio
 between Konfyt and Linuxsampler.
 
 Carla
@@ -42,6 +42,6 @@ Carla
 If the user wants to use Carla for SFZ support, the appropriate command-line
 argument must be passed to Konfyt at startup. Use ``--help`` for more details.
 
-The Carla backend runs inside Konfyt but MIDI and audio is exchanged similar to
+The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
 with Linuxsampler, using JACK ports.
 
