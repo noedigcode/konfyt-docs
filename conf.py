@@ -22,7 +22,7 @@ copyright = '2021, Gideon van der Kolf'
 author = 'Gideon van der Kolf'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1.5'
+release = '1.1.6'
 
 # The master toctree document.
 master_doc = 'index'
