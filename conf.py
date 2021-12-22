@@ -34,6 +34,7 @@ master_doc = 'index'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_rtd_theme' # To use, pip install sphinx_rtd_theme
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -51,7 +52,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '_themes']
 # a list of builtin themes.
 #
 #html_theme = 'alabaster'
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme" # or sphinx_rtd_theme_downloaded to use theme in local folder
 html_theme_path=["_themes",]
 
 # Add any paths that contain custom static files (such as style sheets) here,

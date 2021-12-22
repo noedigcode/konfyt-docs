@@ -91,33 +91,33 @@
            <div itemprop="articleBody">
              
   <div class="section" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h1>
 <div class="section" id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline"></a></h2>
 <p>It is a good idea to fill in all the options in the settings screen.</p>
 <div class="section" id="file-manager">
-<h3>File Manager<a class="headerlink" href="#file-manager" title="Permalink to this headline">¶</a></h3>
+<h3>File Manager<a class="headerlink" href="#file-manager" title="Permalink to this headline"></a></h3>
 <p>The file manager entry is optional and is provided in case your default file manager doesn’t play along well. You can test it by right-clicking on one of the library items and clicking <em>Open in File Manager</em>. If you receive an error message from your file manager, specify your preferred file manager in settings (e.g. either dolphin, nautilus, thunar, pcmanfm, etc.).</p>
 </div>
 <div class="section" id="projects-directory">
-<h3>Projects Directory<a class="headerlink" href="#projects-directory" title="Permalink to this headline">¶</a></h3>
+<h3>Projects Directory<a class="headerlink" href="#projects-directory" title="Permalink to this headline"></a></h3>
 <p>This is the default directory for projects. This directory is scanned at startup and all the projects are listed in the projects Open menu for easy access. When saving a project you can seamlessly save it in this directory by accepting the proposed path (or choose No to select a different path).</p>
 </div>
 <div class="section" id="scanning">
-<h3>Scanning<a class="headerlink" href="#scanning" title="Permalink to this headline">¶</a></h3>
+<h3>Scanning<a class="headerlink" href="#scanning" title="Permalink to this headline"></a></h3>
 <p>The <em>Apply and Rescan</em> button clears the database and scans the specified directories and subdirectories for SFZs, GIGs, soundfonts (sf2) and patches. This may take a while, especially with big soundfonts as each soundfont is loaded with Fluidsynth in order to extract its program information.</p>
 <p>The <em>Apply and Quick Scan</em> button leaves the soundfonts already in the database intact and only scans and loads new files not yet in the database.</p>
 </div>
 </div>
 <div class="section" id="library">
-<h2>Library<a class="headerlink" href="#library" title="Permalink to this headline">¶</a></h2>
+<h2>Library<a class="headerlink" href="#library" title="Permalink to this headline"></a></h2>
 <p>In order to fill the library with instruments (patches, SFZs and sf2 soundfonts), a scan must first be performed from the settings screen.</p>
 <p>The library organizes sounds using subdirectories. Thus, for easy navigation it is useful to sort your sounds into subfolders, for example using categories like Piano, Strings, Organs, Pads, etc.</p>
 <p>When selecting a soundfont, the list of programs appear below the library tree. By double-clicking on a soundfont program or a SFZ or patch in the tree, the sound is added as a layer to the current patch.</p>
 <p>When searching, file names and program names within soundfonts are searched.</p>
 </div>
 <div class="section" id="projects">
-<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
+<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline"></a></h2>
 <p>A Konfyt project contains the following:</p>
 <ul class="simple">
 <li>Patches</li>
@@ -130,11 +130,11 @@
 <p>Each project is saved in its own directory. A project directory contains the project file (an XML file with a name ending with “.konfytproject”) and a “patches” folder containing the patches.</p>
 </div>
 <div class="section" id="ports-and-buses">
-<h2>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline">¶</a></h2>
+<h2>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline"></a></h2>
 <p>Konfyt uses ports and buses to receive and send audio and MIDI. A bus is actually just an audio output port. Each port and bus directly relates to a JACK port and can be connected to other JACK ports (i.e. other applications or hardware input/output).</p>
 <p>Any port connections specified within Konfyt are persistently maintained, even after other applications restart, hardware is reconnected or when disconnects are attempted from outside Konfyt.</p>
 <div class="section" id="midi-input-ports">
-<h3>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline">¶</a></h3>
+<h3>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline"></a></h3>
 <p>A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI controller
 (e.g. keyboard) or other applications. The MIDI input is routed to one or more
 instrument layers inside patches. MIDI input ports are set up in the <em>Ports and Buses</em> screen.</p>
@@ -143,7 +143,7 @@ reaches any patches/layers. When a MIDI input port is selected on the <em>Ports 
 screen, a button appears below the connections list to access the MIDI filter settings.</p>
 </div>
 <div class="section" id="audio-bus-output-port">
-<h3>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Permalink to this headline">¶</a></h3>
+<h3>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Permalink to this headline"></a></h3>
 <p>A bus is an audio output port which relates to 2 JACK audio ports (left and right).
 Audio buses output audio to other applications or to the system output. Buses are set up
 in the <em>Ports and Buses</em> screen. Each instrument layer outputs to a specific bus.
@@ -158,18 +158,18 @@ master volume setting, preventing it from being reduced multiple times (each tim
 the signal leaves Konfyt).</p>
 </div>
 <div class="section" id="midi-output-ports">
-<h3>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Permalink to this headline">¶</a></h3>
+<h3>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Permalink to this headline"></a></h3>
 <p>A MIDI output port sends MIDI out from Konfyt to another application or hardware.
 To use a MIDI output port, it is added as a layer in a patch. Thus, MIDI will only be sent to the port when a patch is active with that contains a layer corresponding to the port. As a layer, it has its own MIDI filter, output destination port and output MIDI channel specific to that layer (i.e. it can be different for each patch).</p>
 </div>
 <div class="section" id="audio-input-ports">
-<h3>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Permalink to this headline">¶</a></h3>
+<h3>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Permalink to this headline"></a></h3>
 <p>An audio input port receives audio from other applications or hardware and routes it to a bus.
 To use an audio input port, it is added as a layer in a patch. Thus, audio will only be routed from an audio input port when a patch is active that contains a layer corresponding to that port. As a layer, it has its own gain slider and destination bus specific to that layer (i.e. it can be different for each patch).</p>
 </div>
 </div>
 <div class="section" id="midi-triggers">
-<h2>MIDI Triggers<a class="headerlink" href="#midi-triggers" title="Permalink to this headline">¶</a></h2>
+<h2>MIDI Triggers<a class="headerlink" href="#midi-triggers" title="Permalink to this headline"></a></h2>
 <p>Konfyt allows MIDI triggers (similar to “MIDI learn” in other applications) to be set up in order to perform an action when the specified MIDI message is received. MIDI triggers are set up in the <em>Triggers</em> screen. Received MIDI messages are shown on the right and can be assigned to actions on the left by using the <em>Assign</em> button or by selecting the event and double-clicking on the action (or vice versa).</p>
 <p>When bank select messages (CC0 and CC32) are directly followed by a program change message, the messages are grouped together as one bank and program message.</p>
 <p>MIDI message values are interpreted corresponding to the action it is assigned. For actions such as gain, the absolute MIDI value is used. For other actions such as patch switching or toggling a setting, the action is only triggered if the MIDI message value is larger than zero. This eliminates double triggering when a button or note sends both 127 and zero when pressed.</p>
@@ -187,7 +187,7 @@ MIDI message value is in the range.</li>
 </ul>
 </div>
 <div class="section" id="patch-layers-view">
-<h2>Patch/layers View<a class="headerlink" href="#patch-layers-view" title="Permalink to this headline">¶</a></h2>
+<h2>Patch/layers View<a class="headerlink" href="#patch-layers-view" title="Permalink to this headline"></a></h2>
 <p>The main patch/layers view shows the currently active patch. Normally, audio and MIDI will only play from the
 currently active (currently visible) patch. Switching to another patch will deactivate the patch and activate
 the other patch. When switching away from a patch, audio output ports are faded out so a sudden audio drop isn’t
@@ -201,13 +201,13 @@ to other patches.</p>
 layer whenever the patch is activated. This is useful for switching programs on hardware when activating a patch.</p>
 </div>
 <div class="section" id="other-jack-connections">
-<h2>Other JACK Connections<a class="headerlink" href="#other-jack-connections" title="Permalink to this headline">¶</a></h2>
+<h2>Other JACK Connections<a class="headerlink" href="#other-jack-connections" title="Permalink to this headline"></a></h2>
 <p>In the <em>Other Jack Connections</em> screen, JACK audio and MIDI ports not belonging to Konfyt can be connected
 to each other. Just like with Konfyt ports, these connections are persistently maintianed by Konfyt, even
 when another app tries to disconnect it or after other apps restart or hardware is reconnected.</p>
 </div>
 <div class="section" id="external-applications">
-<h2>External Applications<a class="headerlink" href="#external-applications" title="Permalink to this headline">¶</a></h2>
+<h2>External Applications<a class="headerlink" href="#external-applications" title="Permalink to this headline"></a></h2>
 <p>The <em>External Applications</em> list is a simple list that allows you to store commands in a project for easily running external applications. It can be used as a simple crude way to restore your session of applications every time you open the project.</p>
 <p>The string <code class="docutils literal notranslate"><span class="pre">$PROJ_DIR$</span></code> will be replaced by the current project directory. This can be used to make a project more self-contained by storing files used by external applications in the Konfyt project directory and using the string in arguments for the commands.</p>
 <p><strong>For instance</strong>, you may use Carla to host plugins:</p>

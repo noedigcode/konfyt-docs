@@ -74,7 +74,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="sound-engines">
-<h1>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline">¶</a></h1>
+<h1>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline"></a></h1>
 <p>Konfyt fundamentally uses JACK (the JACK Audio Connection Kit) for MIDI and audio.</p>
 <p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
 <p>Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
@@ -85,7 +85,7 @@ support using the LSCP (Linuxsampler Control Protocol) library.</p>
 <p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
 Linuxsampler is used by default if no command-line arguments are specified.</p>
 <div class="section" id="linuxsampler">
-<h2>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline">¶</a></h2>
+<h2>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline"></a></h2>
 <p>LSCP is used to communicate with Linuxsampler. At startup, if LSCP fails to
 initialise, it is assumed that Linuxsampler is not running and a Linuxsampler
 process is started. Then LSCP initialisation is retried.</p>
@@ -103,7 +103,7 @@ automatically connects these to the Linuxsampler ports in order to transfer MIDI
 between Konfyt and Linuxsampler.</p>
 </div>
 <div class="section" id="carla">
-<h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline">¶</a></h2>
+<h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline"></a></h2>
 <p>If the user wants to use Carla for SFZ support, the appropriate command-line
 argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
 <p>The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
