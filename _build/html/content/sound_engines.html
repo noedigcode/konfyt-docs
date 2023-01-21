@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sound Engines &mdash; Konfyt 1.1.6 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>Sound Engines &mdash; Konfyt 1.2.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +37,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
@@ -62,8 +64,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Sound Engines</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Sound Engines</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/sound_engines.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -73,7 +75,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="sound-engines">
+  <section id="sound-engines">
 <h1>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline"></a></h1>
 <p>Konfyt fundamentally uses JACK (the JACK Audio Connection Kit) for MIDI and audio.</p>
 <p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
@@ -84,7 +86,7 @@ handling SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsamp
 support using the LSCP (Linuxsampler Control Protocol) library.</p>
 <p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
 Linuxsampler is used by default if no command-line arguments are specified.</p>
-<div class="section" id="linuxsampler">
+<section id="linuxsampler">
 <h2>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline"></a></h2>
 <p>LSCP is used to communicate with Linuxsampler. At startup, if LSCP fails to
 initialise, it is assumed that Linuxsampler is not running and a Linuxsampler
@@ -101,15 +103,15 @@ via LSCP. A MIDI port and two audio ports are created for the instrument in Linu
 Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
 automatically connects these to the Linuxsampler ports in order to transfer MIDI and audio
 between Konfyt and Linuxsampler.</p>
-</div>
-<div class="section" id="carla">
+</section>
+<section id="carla">
 <h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline"></a></h2>
 <p>If the user wants to use Carla for SFZ support, the appropriate command-line
 argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
 <p>The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
 with Linuxsampler, using JACK ports.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -122,7 +124,7 @@ with Linuxsampler, using JACK ports.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Gideon van der Kolf.</p>
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

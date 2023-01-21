@@ -22,3 +22,22 @@ Discussions on this Qt bug can be found here:
 - https://gitlab.freedesktop.org/xorg/xserver/-/issues/206
 - https://gitlab.freedesktop.org/xorg/xserver/-/issues/497
 
+
+No sound, JACK complains that it can't allocate memory, crash (pre v1.2.2)
+--------------------------------------------------------------------------
+
+If the following is printed when running Konfyt from a console:
+``
+Cannot lock down 82280346 byte memory area (Cannot allocate memory)
+``
+along with potentially other memory or realtime related messages, your system
+may not be configured correctly for realtime audio work.
+
+Two probable culprits are that your user may not be in the ``audio`` group, and
+that your ``ulimits`` file may not be set up correctly.
+
+The rtcqs script from https://codeberg.org/rtcqs/rtcqs can be used to check
+whether your system is set up properly. Follow the guidelines in the script
+(especially related to the above mentioned) to make the required changes.
+
+

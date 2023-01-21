@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Known Issues &mdash; Konfyt 1.1.6 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>Known Issues &mdash; Konfyt 1.2.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +37,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
@@ -43,6 +45,7 @@
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Known Issues</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#midi-triggers-not-working-when-screen-locked">MIDI Triggers not working when screen locked</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2">No sound, JACK complains that it can’t allocate memory, crash (pre v1.2.2)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">What’s New</a></li>
@@ -61,8 +64,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Known Issues</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Known Issues</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/known_issues.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -72,9 +75,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="known-issues">
+  <section id="known-issues">
 <h1>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline"></a></h1>
-<div class="section" id="midi-triggers-not-working-when-screen-locked">
+<section id="midi-triggers-not-working-when-screen-locked">
 <h2>MIDI Triggers not working when screen locked<a class="headerlink" href="#midi-triggers-not-working-when-screen-locked" title="Permalink to this headline"></a></h2>
 <p>2021-08-23, Linux Mint 20.2, Xfce, Light Locker, Qt 5.12.8</p>
 <p>When the screen is locked, MIDI triggers do not work and the actions are only
@@ -85,13 +88,27 @@ locked.</p>
 <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">QT_XCB_GL_INTEGRATION=none</span></code></p>
 <p>Discussions on this Qt bug can be found here:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list">https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list</a></li>
-<li><a class="reference external" href="https://bugs.freedesktop.org/show_bug.cgi?id=91448">https://bugs.freedesktop.org/show_bug.cgi?id=91448</a></li>
-<li><a class="reference external" href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/206">https://gitlab.freedesktop.org/xorg/xserver/-/issues/206</a></li>
-<li><a class="reference external" href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/497">https://gitlab.freedesktop.org/xorg/xserver/-/issues/497</a></li>
+<li><p><a class="reference external" href="https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list">https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list</a></p></li>
+<li><p><a class="reference external" href="https://bugs.freedesktop.org/show_bug.cgi?id=91448">https://bugs.freedesktop.org/show_bug.cgi?id=91448</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/206">https://gitlab.freedesktop.org/xorg/xserver/-/issues/206</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/497">https://gitlab.freedesktop.org/xorg/xserver/-/issues/497</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+<section id="no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2">
+<h2>No sound, JACK complains that it can’t allocate memory, crash (pre v1.2.2)<a class="headerlink" href="#no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2" title="Permalink to this headline"></a></h2>
+<p>If the following is printed when running Konfyt from a console:
+``
+Cannot lock down 82280346 byte memory area (Cannot allocate memory)
+``
+along with potentially other memory or realtime related messages, your system
+may not be configured correctly for realtime audio work.</p>
+<p>Two probable culprits are that your user may not be in the <code class="docutils literal notranslate"><span class="pre">audio</span></code> group, and
+that your <code class="docutils literal notranslate"><span class="pre">ulimits</span></code> file may not be set up correctly.</p>
+<p>The rtcqs script from <a class="reference external" href="https://codeberg.org/rtcqs/rtcqs">https://codeberg.org/rtcqs/rtcqs</a> can be used to check
+whether your system is set up properly. Follow the guidelines in the script
+(especially related to the above mentioned) to make the required changes.</p>
+</section>
+</section>
 
 
            </div>
@@ -104,7 +121,7 @@ locked.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Gideon van der Kolf.</p>
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

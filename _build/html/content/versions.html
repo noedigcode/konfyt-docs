@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What’s New &mdash; Konfyt 1.1.6 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>What’s New &mdash; Konfyt 1.2.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,7 +36,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
@@ -42,6 +44,10 @@
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#january-2023">[1.2.2] - January 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#october-2022">[1.2.1] - October 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#july-2022">[1.2.0] - July 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#january-2022">[1.1.7] - January 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#october-2021">[1.1.6] - October 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#july-2021">[1.1.5] - July 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#april-2021">[1.1.4] - April 2021</a></li>
@@ -67,8 +73,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>What’s New</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">What’s New</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/versions.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -78,137 +84,234 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="what-s-new">
+  <section id="what-s-new">
 <h1>What’s New<a class="headerlink" href="#what-s-new" title="Permalink to this headline"></a></h1>
-<div class="section" id="october-2021">
-<h2>[1.1.6] - October 2021<a class="headerlink" href="#october-2021" title="Permalink to this headline"></a></h2>
+<section id="january-2023">
+<h2>[1.2.2] - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
-<li>Filesystem view now supports previewing of instruments like the library.</li>
-<li>Global transpose keyboard shortcuts added to live mode.</li>
+<li><p>Update MIDI filter immediately while editing it in the GUI editor.</p></li>
 </ul>
 <p>Fixes</p>
 <ul class="simple">
-<li>Pitchbend now works if Carla backend is used to play SFZ files.</li>
-<li>Fix SF2 loading from command-line arguments.</li>
-<li>Fix global volume up action getting stuck due to rounding errors.</li>
+<li><p>Fix library item double-click working intermittently on some systems.</p></li>
+<li><p>Destination audio port null check to prevent crash when JACK/system is not
+configured correctly. (When JACK can’t allocate memory due to user not
+belonging to audio group or ulimits not being set up correctly. Note that
+in this case the audio system is not functioning correctly in any case.)</p></li>
 </ul>
 <p>Changes</p>
 <ul class="simple">
-<li>Some GUI tweaks in the patch layer view and library/filesystem preview.</li>
-<li>Misc code refactoring, cleanup and fixes.</li>
+<li><p>About dialog is now integrated into the main window.</p></li>
+<li><p>MIDI filter editor size constraints and scrollability removed for hopefully
+better layout across different systems.</p></li>
 </ul>
-</div>
-<div class="section" id="july-2021">
-<h2>[1.1.5] - July 2021<a class="headerlink" href="#july-2021" title="Permalink to this headline"></a></h2>
+</section>
+<section id="october-2022">
+<h2>[1.2.1] - October 2022<a class="headerlink" href="#october-2022" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
-<li>Ignore global transpose option in layer MIDI filter</li>
-<li>Ignore global volume option for buses (checkbox on Ports and Buses screen)</li>
-</ul>
-</div>
-<div class="section" id="april-2021">
-<h2>[1.1.4] - April 2021<a class="headerlink" href="#april-2021" title="Permalink to this headline"></a></h2>
-<p>Added</p>
-<ul class="simple">
-<li>Basic MIDI pickup for layer and master gain sliders. Range setting can be
-set in the Triggers page.</li>
-</ul>
-</div>
-<div class="section" id="january-2021">
-<h2>[1.1.3] - January 2021<a class="headerlink" href="#january-2021" title="Permalink to this headline"></a></h2>
-<p>Added</p>
-<ul class="simple">
-<li>Per-layer audio output indicator</li>
-<li>Two Konfyt instances can now run in parallel, nicely sharing Linuxsampler</li>
-<li>Orphaned Linuxsampler channels and devices (due to previous app instance crash)
-are now cleaned up at startup</li>
-<li>MIDI output port layer output (right-hand side) button now has link to port connections</li>
-<li>Xrun messages show time since last xrun</li>
-<li>Patch layers can now be reordered</li>
-</ul>
-<p>Removed</p>
-<ul class="simple">
-<li>Removed multi-project tabs. They were rarely (never?) used, buggy and
-resulted in unnecessary maintenance. Multiple app instances can be used
-instead.</li>
+<li><p>Checkbox in filesystem view to show hidden files.</p></li>
+<li><p>Add dropdown menu to filesystem view path text box with common paths and remove
+home and current project buttons.</p></li>
+<li><p>Warn when running an external app with a project directory replacement tag in
+the command if the project has not been saved yet.</p></li>
 </ul>
 <p>Fixes</p>
 <ul class="simple">
-<li>Fix crash when loading sfz file if Linuxsampler is not installed</li>
-<li>Fix copying a patch pointing to original patch layers</li>
-<li>Fix always-active patch volume not changed by global volume when other patch is active</li>
-<li>SFZ engine startup delay handled better, fixes loading sfz files through
-command-line when Linuxsampler is not running yet</li>
-<li>Fix CC value not loaded correctly for MIDI Send Events</li>
+<li><p>Remove dot at end of project folder names when saved to default project location.</p></li>
+<li><p>Use the correct project directory when running an external app that was added
+before the project was saved.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Insert new patches after currently selected patch when adding new or copying a
+patch.</p></li>
+<li><p>Show a menu when the remove patch button is clicked to serve as a confirmation.</p></li>
+<li><p>Print slightly less alarming message in console when MIDI map presets file or
+settings file does not exist.</p></li>
+<li><p>When running an app from the external app list, print the expanded name if it
+contains a $PROJ_DIR$ and print a message when an external app stops.</p></li>
+</ul>
+</section>
+<section id="july-2022">
+<h2>[1.2.0] - July 2022<a class="headerlink" href="#july-2022" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Patch list drag and drop for re-ordering patches.</p></li>
+<li><p>Detect Linuxsampler process crash and automatically restart.</p></li>
+<li><p>Soundfont scanning for library is now done in a separate process so Fluidsynth
+crashes due to malformed soundfonts don’t affect Konfyt.</p></li>
+<li><p>Pitchbend up and down ranges in MIDI filter.</p></li>
+<li><p>Add CC block-list to MIDI filter.</p></li>
+<li><p>Note velocity mapping with graph and presets in MIDI filter.</p></li>
+<li><p>Escape key returns to main patch view.</p></li>
+<li><p>Library context menu to remove patch from library.</p></li>
+<li><p>When a patch is selected in the library, show info and layers below library.</p></li>
+<li><p>Add liblscp version to about text.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Apply patch list number/note show/hide setting when loading a project.</p></li>
+<li><p>Change volume when master volume slider is moved without using the mouse.</p></li>
+<li><p>Only relay noteoff messages to GUI (e.g. in console or received MIDI events lists)
+if it actually resulted in a noteoff message being sent.</p></li>
+<li><p>MIDI send list editor now only shows received MIDI events for the corresponding
+layer.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>When console/main window not available any more (e.g. during program exit),
+send print output to stdout.</p></li>
+<li><p>CC allow-list in MIDI filter is now space-separated text.</p></li>
+<li><p>Entire top toolbar area becomes red to emphasise when Panic is activated.</p></li>
+<li><p>Patches in library view don’t show file extension any more.</p></li>
+<li><p>Some code housekeeping and refactoring.</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>MIDI filter note velocity limits - replaced by velocity mapping.</p></li>
+</ul>
+</section>
+<section id="january-2022">
+<h2>[1.1.7] - January 2022<a class="headerlink" href="#january-2022" title="Permalink to this headline"></a></h2>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Set QT_XCB_GL_INTEGRATION=none environment variable at startup to prevent
+event loop from stopping when screen is locked on some systems which caused
+some functionality like MIDI triggers and port reconnections to stop working.</p></li>
+<li><p>Fix .gig file loading.</p></li>
+</ul>
+</section>
+<section id="october-2021">
+<h2>[1.1.6] - October 2021<a class="headerlink" href="#october-2021" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Filesystem view now supports previewing of instruments like the library.</p></li>
+<li><p>Global transpose keyboard shortcuts added to live mode.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Pitchbend now works if Carla backend is used to play SFZ files.</p></li>
+<li><p>Fix SF2 loading from command-line arguments.</p></li>
+<li><p>Fix global volume up action getting stuck due to rounding errors.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Some GUI tweaks in the patch layer view and library/filesystem preview.</p></li>
+<li><p>Misc code refactoring, cleanup and fixes.</p></li>
+</ul>
+</section>
+<section id="july-2021">
+<h2>[1.1.5] - July 2021<a class="headerlink" href="#july-2021" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Ignore global transpose option in layer MIDI filter</p></li>
+<li><p>Ignore global volume option for buses (checkbox on Ports and Buses screen)</p></li>
+</ul>
+</section>
+<section id="april-2021">
+<h2>[1.1.4] - April 2021<a class="headerlink" href="#april-2021" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Basic MIDI pickup for layer and master gain sliders. Range setting can be
+set in the Triggers page.</p></li>
+</ul>
+</section>
+<section id="january-2021">
+<h2>[1.1.3] - January 2021<a class="headerlink" href="#january-2021" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Per-layer audio output indicator</p></li>
+<li><p>Two Konfyt instances can now run in parallel, nicely sharing Linuxsampler</p></li>
+<li><p>Orphaned Linuxsampler channels and devices (due to previous app instance crash)
+are now cleaned up at startup</p></li>
+<li><p>MIDI output port layer output (right-hand side) button now has link to port connections</p></li>
+<li><p>Xrun messages show time since last xrun</p></li>
+<li><p>Patch layers can now be reordered</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>Removed multi-project tabs. They were rarely (never?) used, buggy and
+resulted in unnecessary maintenance. Multiple app instances can be used
+instead.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix crash when loading sfz file if Linuxsampler is not installed</p></li>
+<li><p>Fix copying a patch pointing to original patch layers</p></li>
+<li><p>Fix always-active patch volume not changed by global volume when other patch is active</p></li>
+<li><p>SFZ engine startup delay handled better, fixes loading sfz files through
+command-line when Linuxsampler is not running yet</p></li>
+<li><p>Fix CC value not loaded correctly for MIDI Send Events</p></li>
 </ul>
 <p>Changed</p>
 <ul class="simple">
-<li>Patch list behaviour and interaction improved</li>
-<li>Code cleanup and organisation, largely concerning the database</li>
-<li>Window title is now Patch - Project [Jack Client Name]</li>
-<li>Sustain indication in GUI has threshold of 64</li>
-<li>Bank/program messages received now handled per port and channel</li>
-<li>MIDI filter screen last received messages only shown from associated port/layer</li>
+<li><p>Patch list behaviour and interaction improved</p></li>
+<li><p>Code cleanup and organisation, largely concerning the database</p></li>
+<li><p>Window title is now Patch - Project [Jack Client Name]</p></li>
+<li><p>Sustain indication in GUI has threshold of 64</p></li>
+<li><p>Bank/program messages received now handled per port and channel</p></li>
+<li><p>MIDI filter screen last received messages only shown from associated port/layer</p></li>
 </ul>
-</div>
-<div class="section" id="october-2020">
+</section>
+<section id="october-2020">
 <h2>[1.1.2] - October 2020<a class="headerlink" href="#october-2020" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
-<li>Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).</li>
-<li>Global sustain and pitchbend non-zero indicators.</li>
+<li><p>Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).</p></li>
+<li><p>Global sustain and pitchbend non-zero indicators.</p></li>
 </ul>
 <p>Changed</p>
 <ul class="simple">
-<li>Fairly big code refactor under the hood, should not be noticeable to users.</li>
-<li>Fix bug of empty MIDI input ports added after removal of non-last port while
-console MIDI output is enabled.</li>
-<li>Small GUI tweaks.</li>
+<li><p>Fairly big code refactor under the hood, should not be noticeable to users.</p></li>
+<li><p>Fix bug of empty MIDI input ports added after removal of non-last port while
+console MIDI output is enabled.</p></li>
+<li><p>Small GUI tweaks.</p></li>
 </ul>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h2>[1.1.1] - October 2020<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
-<li>Preview mode options: MIDI input port and channel, output bus.</li>
-<li>MIDI input port and bus menus now have a link to the connections page.</li>
-<li>Save-as finally implemented.</li>
-<li>Compatible with Carla 2.2.0 (API change)</li>
+<li><p>Preview mode options: MIDI input port and channel, output bus.</p></li>
+<li><p>MIDI input port and bus menus now have a link to the connections page.</p></li>
+<li><p>Save-as finally implemented.</p></li>
+<li><p>Compatible with Carla 2.2.0 (API change)</p></li>
 </ul>
 <p>Changed</p>
 <ul class="simple">
-<li>Default global and layer gain (volume) is now 1.0.</li>
-<li>SF3 soundfonts are now detected and loaded.</li>
-<li>Current setting is marked in MIDI channel/port/bus menus</li>
-<li>Small GUI tweaks.</li>
+<li><p>Default global and layer gain (volume) is now 1.0.</p></li>
+<li><p>SF3 soundfonts are now detected and loaded.</p></li>
+<li><p>Current setting is marked in MIDI channel/port/bus menus</p></li>
+<li><p>Small GUI tweaks.</p></li>
 </ul>
-</div>
-<div class="section" id="december-2019">
+</section>
+<section id="december-2019">
 <h2>[1.1.0] - December 2019<a class="headerlink" href="#december-2019" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>Each patch can be set to send MIDI events to other apps/hardware when activated
+<li><p>Each patch can be set to send MIDI events to other apps/hardware when activated
 and sysex messages are also now supported. MIDI send events can be saved for
-reuse in other projects.</li>
-<li>Fluidsynth 2 is also now supported.</li>
-<li>Config files are now saved to standard XDG directories.</li>
-<li>Carla support is now optional.</li>
+reuse in other projects.</p></li>
+<li><p>Fluidsynth 2 is also now supported.</p></li>
+<li><p>Config files are now saved to standard XDG directories.</p></li>
+<li><p>Carla support is now optional.</p></li>
 </ul>
-</div>
-<div class="section" id="beta-october-2019">
+</section>
+<section id="beta-october-2019">
 <h2>[1.1.0-beta] - October 2019<a class="headerlink" href="#beta-october-2019" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>MIDI send events: each MIDI output layer can have MIDI send events associated
+<li><p>MIDI send events: each MIDI output layer can have MIDI send events associated
 with it which are sent when the patch is activated. MIDI send events can also
-be saved for future use in other projects.</li>
-<li>MIDI note names octave numbers changed to the IPN standard to match most other
-software numbering.</li>
-<li>Always-active option for patches: a patch can be set to always be active, even
-if it is not the current patch.</li>
-<li>GUI uses system specified font size and resizes properly based on font size.</li>
+be saved for future use in other projects.</p></li>
+<li><p>MIDI note names octave numbers changed to the IPN standard to match most other
+software numbering.</p></li>
+<li><p>Always-active option for patches: a patch can be set to always be active, even
+if it is not the current patch.</p></li>
+<li><p>GUI uses system specified font size and resizes properly based on font size.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -220,7 +323,7 @@ if it is not the current patch.</li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Gideon van der Kolf.</p>
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

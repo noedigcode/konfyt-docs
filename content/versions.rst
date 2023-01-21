@@ -1,5 +1,106 @@
 What's New
-===============
+==========
+
+[1.2.2] - January 2023
+----------------------
+
+Added
+
+- Update MIDI filter immediately while editing it in the GUI editor.
+
+Fixes
+
+- Fix library item double-click working intermittently on some systems.
+- Destination audio port null check to prevent crash when JACK/system is not
+  configured correctly. (When JACK can't allocate memory due to user not
+  belonging to audio group or ulimits not being set up correctly. Note that
+  in this case the audio system is not functioning correctly in any case.)
+
+Changes
+
+- About dialog is now integrated into the main window.
+- MIDI filter editor size constraints and scrollability removed for hopefully
+  better layout across different systems.
+
+
+[1.2.1] - October 2022
+----------------------
+
+Added
+
+- Checkbox in filesystem view to show hidden files.
+- Add dropdown menu to filesystem view path text box with common paths and remove
+  home and current project buttons.
+- Warn when running an external app with a project directory replacement tag in
+  the command if the project has not been saved yet.
+
+Fixes
+
+- Remove dot at end of project folder names when saved to default project location.
+- Use the correct project directory when running an external app that was added
+  before the project was saved.
+
+Changes
+
+- Insert new patches after currently selected patch when adding new or copying a
+  patch.
+- Show a menu when the remove patch button is clicked to serve as a confirmation.
+- Print slightly less alarming message in console when MIDI map presets file or
+  settings file does not exist.
+- When running an app from the external app list, print the expanded name if it
+  contains a $PROJ_DIR$ and print a message when an external app stops.
+
+
+[1.2.0] - July 2022
+-------------------
+
+Added
+
+- Patch list drag and drop for re-ordering patches.
+- Detect Linuxsampler process crash and automatically restart.
+- Soundfont scanning for library is now done in a separate process so Fluidsynth
+  crashes due to malformed soundfonts don't affect Konfyt.
+- Pitchbend up and down ranges in MIDI filter.
+- Add CC block-list to MIDI filter.
+- Note velocity mapping with graph and presets in MIDI filter.
+- Escape key returns to main patch view.
+- Library context menu to remove patch from library.
+- When a patch is selected in the library, show info and layers below library.
+- Add liblscp version to about text.
+
+Fixes
+
+- Apply patch list number/note show/hide setting when loading a project.
+- Change volume when master volume slider is moved without using the mouse.
+- Only relay noteoff messages to GUI (e.g. in console or received MIDI events lists)
+  if it actually resulted in a noteoff message being sent.
+- MIDI send list editor now only shows received MIDI events for the corresponding
+  layer.
+
+Changes
+
+- When console/main window not available any more (e.g. during program exit),
+  send print output to stdout.
+- CC allow-list in MIDI filter is now space-separated text.
+- Entire top toolbar area becomes red to emphasise when Panic is activated.
+- Patches in library view don't show file extension any more.
+- Some code housekeeping and refactoring.
+
+Removed
+
+- MIDI filter note velocity limits - replaced by velocity mapping.
+
+
+[1.1.7] - January 2022
+----------------------
+
+Fixes
+
+- Set QT_XCB_GL_INTEGRATION=none environment variable at startup to prevent
+  event loop from stopping when screen is locked on some systems which caused
+  some functionality like MIDI triggers and port reconnections to stop working.
+- Fix .gig file loading.
+
 
 [1.1.6] - October 2021
 ----------------------
