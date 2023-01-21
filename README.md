@@ -13,9 +13,11 @@ Konfyt website: http://noedig.co.za/konfyt
 Building the documentation
 --------------------------
 
-- Ensure Sphinx is installed: `apt install python3-sphinx'
+- Ensure Sphinx is installed: `apt install python3-sphinx`
 
 - Install the Sphinx RTD (Read The Docs) theme: `pip install sphinx-rtd-theme`
+  
+  (A downloaded version is saved in the `_themes` directory for posterity.)
 
 - Build the documentation with `make html`
 
@@ -24,7 +26,7 @@ Conventions and rst cheatsheet
 ------------------------------
 
 ```
-Chapter Heading(at top of .rst file)
+Chapter Heading (at top of .rst file)
 ####################################
 
 Section
