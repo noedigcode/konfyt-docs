@@ -84,8 +84,10 @@
 performed once the screen is unlocked.</p>
 <p>This is due to a Qt bug causing the GUI and timers to stop while the screen is
 locked.</p>
-<p>A workaround is to set the following environment variable before running Konfyt:
-<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">QT_XCB_GL_INTEGRATION=none</span></code></p>
+<div class="line-block">
+<div class="line">A workaround is to set the following environment variable before running Konfyt:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">QT_XCB_GL_INTEGRATION=none</span></code></div>
+</div>
 <p>Discussions on this Qt bug can be found here:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list">https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list</a></p></li>
@@ -96,12 +98,11 @@ locked.</p>
 </section>
 <section id="no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2">
 <h2>No sound, JACK complains that it can’t allocate memory, crash (pre v1.2.2)<a class="headerlink" href="#no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2" title="Permalink to this headline"></a></h2>
-<p>If the following is printed when running Konfyt from a console:
-``
-Cannot lock down 82280346 byte memory area (Cannot allocate memory)
-``
-along with potentially other memory or realtime related messages, your system
-may not be configured correctly for realtime audio work.</p>
+<div class="line-block">
+<div class="line">If the following is printed when running Konfyt from a console:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">lock</span> <span class="pre">down</span> <span class="pre">82280346</span> <span class="pre">byte</span> <span class="pre">memory</span> <span class="pre">area</span> <span class="pre">(Cannot</span> <span class="pre">allocate</span> <span class="pre">memory)</span></code></div>
+<div class="line">along with potentially other memory or realtime related messages, your system may not be configured correctly for realtime audio work.</div>
+</div>
 <p>Two probable culprits are that your user may not be in the <code class="docutils literal notranslate"><span class="pre">audio</span></code> group, and
 that your <code class="docutils literal notranslate"><span class="pre">ulimits</span></code> file may not be set up correctly.</p>
 <p>The rtcqs script from <a class="reference external" href="https://codeberg.org/rtcqs/rtcqs">https://codeberg.org/rtcqs/rtcqs</a> can be used to check

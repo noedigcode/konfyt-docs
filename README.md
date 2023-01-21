@@ -47,4 +47,11 @@ Inline code tags are used for ``command`` or ``path`` strings.
 * Bullet
 * Points
 
+.. Comments are done like so
+   and will not appear in the documentation.
+
+| And to force a newline but not a new paragraph (as an empty line would do)
+| a line block can be made like this using the pipe characters.
+
+
 ```
