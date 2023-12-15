@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ports and Buses &mdash; Konfyt 1.2.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MIDI Triggers" href="triggers.html" />
+    <link rel="prev" title="Projects" href="projects.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Konfyt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ports and Buses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#midi-input-ports">MIDI Input Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audio-bus-output-port">Audio Bus (Output Port)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#midi-output-ports">MIDI Output Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audio-input-ports">Audio Input Ports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">MIDI Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Konfyt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Ports and Buses</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/content/ports_and_buses.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ports-and-buses">
+<h1>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline"></a></h1>
+<p>Konfyt uses ports and buses to receive and send audio and MIDI.
+A bus is actually just an audio output port.
+Each port and bus directly relates to a JACK port and can be connected to JACK
+ports of other applications or hardware.</p>
+<p>Any port connections that are specified within Konfyt in the <em>Ports and Buses</em>
+screen are persistently maintained, even after other applications restart,
+hardware is reconnected or when disconnects are attempted from outside Konfyt.</p>
+<p>All ports and buses are set up in the <em>Ports and Buses</em> screen. They can then
+be assigned to patch layers as input/output in the patch/layer view, by using
+the menu buttons in each layer.</p>
+<section id="midi-input-ports">
+<h2>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline"></a></h2>
+<p>A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI controller
+(e.g. keyboard) or other applications.</p>
+<p>A MIDI input port also has its own MIDI filter, which filters all MIDI before it
+reaches any patches/layers. When a MIDI input port is selected on the <em>Ports and Buses</em>
+screen, a button appears below the connections list to access the MIDI filter settings.</p>
+<p>MIDI input is first routed through the port’s MIDI filter, then to active patches
+through their MIDI filters, and finally to all layers which have been set to use
+the port as input.</p>
+</section>
+<section id="audio-bus-output-port">
+<h2>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Permalink to this headline"></a></h2>
+<p>A bus is an audio output port which relates to 2 JACK audio ports (left and right).
+Audio buses output audio to other applications or to the system output.
+Each patch layer with audio output (instrument layers and audio layers) outputs
+to a specific bus.</p>
+<p>Although a new project contains a default <em>Master Bus</em>, this is merely a name and
+there is nothing special about it.</p>
+<p>An audio bus can be set to ignore (bypass) the global output volume. When an audio bus
+is selected on the <em>Ports and Buses</em> screen, a checkbox appears below the connections list
+to enable this. This is ideal for when you want to send some audio to another application
+for applying effects, and loop it back into Konfyt (return) for further routing.
+By enabling this option on the “send” bus, the audio level isn’t reduced by
+Konfyt’s Global Volume, preventing it from being reduced multiple times (each time
+the signal leaves Konfyt).</p>
+</section>
+<section id="midi-output-ports">
+<h2>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Permalink to this headline"></a></h2>
+<p>A MIDI output port sends MIDI out from Konfyt to another application or hardware.
+To use a MIDI output port, it is added as a layer in a patch.
+Thus, MIDI will only be sent to the port when a patch is active that contains a
+layer corresponding to the port.</p>
+</section>
+<section id="audio-input-ports">
+<h2>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Permalink to this headline"></a></h2>
+<p>An audio input port receives audio from other applications or hardware.
+To use an audio input port, it is added as a layer in a patch.
+Thus, audio will only be routed from an audio input port when a patch is active
+that contains a layer corresponding to that port.
+As a layer, it has its own gain slider and destination bus specific to that layer.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="projects.html" class="btn btn-neutral float-left" title="Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="triggers.html" class="btn btn-neutral float-right" title="MIDI Triggers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

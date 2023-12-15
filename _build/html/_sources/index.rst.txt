@@ -13,11 +13,20 @@ Konfyt - Digital Keyboard Workstation for Linux
     :caption: Contents
 
     content/intro
-    content/usage
+    content/settings
+    content/library
+    content/projects
+    content/ports_and_buses
+    content/triggers
+    content/patches
+    content/midi_filters
+    content/other_jack_connections
+    content/external_apps
+    content/scripting
     content/sound_engines
     content/use_cases
     content/known_issues
-    content/versions
+    content/changelog
     
 ..
     This is it.

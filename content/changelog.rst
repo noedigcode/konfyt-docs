@@ -1,5 +1,118 @@
-What's New
-==========
+Changelog
+=========
+
+1.5.0 - December 2023
+---------------------
+
+Added
+
+- MIDI scripting for patch layers.
+- Other JACK connections can now also break a connection, keeping the ports
+  disconnected.
+- Create project backups when saving a project.
+  Backups are created in a backup subdirectory in the project directory. Two
+  backups are created - one before saving, and one after saving. This ensures
+  data is backed up in the case the project is opened by a previous version of
+  Konfyt that does not do backups and throws away data related to newer features.
+- Live mode shortcut keys to change layer gains.
+- Time for each console print message.
+- Option in settings to open last project at startup.
+- Save window maximized state when quitting and restore at startup.
+- Command-line option to start minimized.
+- Ask before saving project in a non-empty directory.
+- Menu entry in filesystem context menu to copy path.
+- Menu entries in external app editor to browse for file and directory.
+
+Changes
+
+- Disable GUI buttons when they are not applicable: external apps, Other JACK
+  Connections page, Triggers page
+- Improve layout of Ports and Buses, Triggers and Other JACK Connections pages.
+  Widgets are more elegantly aligned now.
+- Console popout dialog changed to window, allowing it to be maximized and treated
+  like other normal windows.
+- Increase external app editor width to maximum available space.
+- Appearance: Colours of most GUI container elements and dialogs darker and
+  consolidated. Dialog group box styles more modern and subdued. Layouts of
+  widgets revised in several places.
+
+Fixes
+
+- Fix crash when exiting while an external app is still running.
+- Handle pitchbend correctly for triggers, mapping it to 0-127.
+
+Removed
+
+- Statusbar
+
+
+[1.4.0] - August 2023
+---------------------
+
+Added
+
+- Patch MIDI filter (filters MIDI for entire patch before it is routed to layers).
+
+Changes
+
+- Add "..." to some GUI menu items.
+- When a new port/bus is added, activate editing its name.
+- When an external app is added or edited, focus the app name text box.
+- Fix patch list menu button left border radius.
+
+Fixes
+
+- Eliminate potential threading race conditions related to MIDI filters.
+
+
+[1.3.1] - May 2023
+------------------
+
+Fixes
+
+- Fix bug where adding a new (non-existing) audio input port to a patch added
+  two layers.
+
+
+[1.3.0] - April 2023
+--------------------
+
+Added
+
+- External apps editor and autostart and auto-restart options per external app.
+  Status display of external apps is also improved.
+- Confirmation prompt when quitting Konfyt.
+
+Changes
+
+- Automatically load all patches and activate the first patch when loading a
+  project.
+- Allow multiple of the same MIDI-out and audio-in port layers per patch.
+- When adding a new patch, switch to the newly added patch.
+- Increase number of patch triggers from 8 to 16.
+- Improve loading of all patches by simply loading patches in engine and not
+  switching to each patch in order to trigger a load.
+- Patch list is now resizable.
+
+Fixes
+
+- Add "exponential" back-off to LSCP (Linuxsampler) connection check timer to
+  reduce GUI freezes when running Konfyt when the JACK server is not available.
+- Improve internal ringbuffer class.
+
+Removed
+
+- Load all patches button (as patches are now all automatically loaded when the
+  project is loaded).
+
+
+[1.2.3] - January 2023
+----------------------
+
+Fixes
+
+- Fix MIDI filter editor reverting changes when Apply is clicked.
+
 
 [1.2.2] - January 2023
 ----------------------
@@ -137,7 +250,11 @@ Added
 Added
 
 - Basic MIDI pickup for layer and master gain sliders. Range setting can be
-  set in the Triggers page.
+  set on the Triggers screen.
+
+Changed
+
+- Some small GUI and other tweaks.
 
 
 [1.1.3] - January 2021

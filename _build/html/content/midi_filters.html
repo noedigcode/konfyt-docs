@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sound Engines &mdash; Konfyt 1.2.2 documentation</title>
+  <title>MIDI Filters &mdash; Konfyt 1.2.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Use Cases" href="use_cases.html" />
-    <link rel="prev" title="Scripting" href="scripting.html" /> 
+    <link rel="next" title="Other JACK Connections" href="other_jack_connections.html" />
+    <link rel="prev" title="Patches" href="patches.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,15 +46,14 @@
 <li class="toctree-l1"><a class="reference internal" href="ports_and_buses.html">Ports and Buses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="triggers.html">MIDI Triggers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patches.html">Patches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MIDI Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#velocity-map">Velocity Map</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sound Engines</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linuxsampler">Linuxsampler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#carla">Carla</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -74,9 +73,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Sound Engines</li>
+      <li class="breadcrumb-item active">MIDI Filters</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/content/sound_engines.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/content/midi_filters.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -84,41 +83,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sound-engines">
-<h1>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline"></a></h1>
-<p>Konfyt fundamentally uses JACK (the JACK Audio Connection Kit) for MIDI and audio.</p>
-<p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
-<p>Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
-still used Linuxsampler as a backend for playing SFZs. However, the Linuxsampler
-support became troublesome and (among other reasons) Carla moved to SFZero for
-handling SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
-support using the LSCP (Linuxsampler Control Protocol) library.</p>
-<p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
-Linuxsampler is used by default if no command-line arguments are specified.</p>
-<section id="linuxsampler">
-<h2>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline"></a></h2>
-<p>LSCP is used to communicate with Linuxsampler. At startup, if LSCP fails to
-initialise, it is assumed that Linuxsampler is not running and a Linuxsampler
-process is started. Then LSCP initialisation is retried.</p>
-<p>Linuxsampler audio and MIDI JACK engines are created. The JACK client name is
-derived from Konfyt’s JACK client name. If Linuxsampler engines with the same
-name already exists, it is assumed to be from a previous Konfyt instance that
-is no longer running and the engines and related SFZ instruments are removed
-before new ones are created for the current session.</p>
-<p>Multiple instances of Konfyt can coexist since JACK requires that each client
-have a unique name.</p>
-<p>When a SFZ layer is added in Konfyt, the instrument is loaded in Linuxsampler
-via LSCP. A MIDI port and two audio ports are created for the instrument in Linuxsampler.
-Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
-automatically connects these to the Linuxsampler ports in order to transfer MIDI and audio
-between Konfyt and Linuxsampler.</p>
-</section>
-<section id="carla">
-<h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline"></a></h2>
-<p>If the user wants to use Carla for SFZ support, the appropriate command-line
-argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
-<p>The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
-with Linuxsampler, using JACK ports.</p>
+  <section id="midi-filters">
+<h1>MIDI Filters<a class="headerlink" href="#midi-filters" title="Permalink to this headline"></a></h1>
+<p>A MIDI filter filters and/or modifies MIDI messages. MIDI filters are available
+for MIDI input ports (on the <em>Ports and Buses</em> screen), patches (from the
+<em>Patch Menu</em>) and individual patch layers that have MIDI input.</p>
+<section id="velocity-map">
+<h2>Velocity Map<a class="headerlink" href="#velocity-map" title="Permalink to this headline"></a></h2>
+<p>The <em>Velocity Map</em> modifies incoming note velocities according to a mapping.
+The mapping is defined by a series of input velocities and a series of output
+velocities, separated with a semicolon:</p>
+<p><code class="docutils literal notranslate"><span class="pre">in1</span> <span class="pre">in2</span> <span class="pre">in3</span> <span class="pre">...</span> <span class="pre">inx;</span> <span class="pre">out1</span> <span class="pre">out2</span> <span class="pre">out3</span> <span class="pre">...</span> <span class="pre">outx</span></code></p>
+<p>where input values are mapped to the output values. Values in-between are linearly
+interpolated.</p>
+<p>Presets are provided for common velocity curves.</p>
+<p>With appropriate values, the map can also be set up to block notes with certain
+velocities, limit the minimum or maximum velocity or compress the velocity
+range.</p>
+<p>For instance, the following mapping limits the minimum velocity to 30, so notes
+softer than 30 will be raised to 30 while the rest are left unchanged:</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">30</span> <span class="pre">127;</span> <span class="pre">30</span> <span class="pre">30</span> <span class="pre">127</span></code></p>
+<p>The following mapping limits the maximum velocity to 100. All louder notes will
+be changed to 100.</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">100</span> <span class="pre">127;</span> <span class="pre">0</span> <span class="pre">100</span> <span class="pre">100</span></code></p>
+<p>This mapping will block all notes with a velocity lower than 50:</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">50</span> <span class="pre">50</span> <span class="pre">127;</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">50</span> <span class="pre">127</span></code></p>
 </section>
 </section>
 
@@ -126,8 +115,8 @@ with Linuxsampler, using JACK ports.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="scripting.html" class="btn btn-neutral float-left" title="Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="use_cases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="patches.html" class="btn btn-neutral float-left" title="Patches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="other_jack_connections.html" class="btn btn-neutral float-right" title="Other JACK Connections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What’s New &mdash; Konfyt 1.2.2 documentation</title>
+  <title>Changelog &mdash; Konfyt 1.2.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -39,12 +39,26 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports_and_buses.html">Ports and Buses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">MIDI Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What’s New</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#january-2023">[1.2.2] - January 2023</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#december-2023">1.5.0 - December 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#august-2023">[1.4.0] - August 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-2023">[1.3.1] - May 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-2023">[1.3.0] - April 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#january-2023">[1.2.3] - January 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">[1.2.2] - January 2023</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#october-2022">[1.2.1] - October 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#july-2022">[1.2.0] - July 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#january-2022">[1.1.7] - January 2022</a></li>
@@ -53,7 +67,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#april-2021">[1.1.4] - April 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#january-2021">[1.1.3] - January 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#october-2020">[1.1.2] - October 2020</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">[1.1.1] - October 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">[1.1.1] - October 2020</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#december-2019">[1.1.0] - December 2019</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#beta-october-2019">[1.1.0-beta] - October 2019</a></li>
 </ul>
@@ -74,9 +88,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">What’s New</li>
+      <li class="breadcrumb-item active">Changelog</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/content/versions.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/content/changelog.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -84,10 +98,118 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="what-s-new">
-<h1>What’s New<a class="headerlink" href="#what-s-new" title="Permalink to this headline"></a></h1>
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h1>
+<section id="december-2023">
+<h2>1.5.0 - December 2023<a class="headerlink" href="#december-2023" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>MIDI scripting for patch layers.</p></li>
+<li><p>Other JACK connections can now also break a connection, keeping the ports
+disconnected.</p></li>
+<li><p>Create project backups when saving a project.
+Backups are created in a backup subdirectory in the project directory. Two
+backups are created - one before saving, and one after saving. This ensures
+data is backed up in the case the project is opened by a previous version of
+Konfyt that does not do backups and throws away data related to newer features.</p></li>
+<li><p>Live mode shortcut keys to change layer gains.</p></li>
+<li><p>Time for each console print message.</p></li>
+<li><p>Option in settings to open last project at startup.</p></li>
+<li><p>Save window maximized state when quitting and restore at startup.</p></li>
+<li><p>Command-line option to start minimized.</p></li>
+<li><p>Ask before saving project in a non-empty directory.</p></li>
+<li><p>Menu entry in filesystem context menu to copy path.</p></li>
+<li><p>Menu entries in external app editor to browse for file and directory.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Disable GUI buttons when they are not applicable: external apps, Other JACK
+Connections page, Triggers page</p></li>
+<li><p>Improve layout of Ports and Buses, Triggers and Other JACK Connections pages.
+Widgets are more elegantly aligned now.</p></li>
+<li><p>Console popout dialog changed to window, allowing it to be maximized and treated
+like other normal windows.</p></li>
+<li><p>Increase external app editor width to maximum available space.</p></li>
+<li><p>Appearance: Colours of most GUI container elements and dialogs darker and
+consolidated. Dialog group box styles more modern and subdued. Layouts of
+widgets revised in several places.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix crash when exiting while an external app is still running.</p></li>
+<li><p>Handle pitchbend correctly for triggers, mapping it to 0-127.</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>Statusbar</p></li>
+</ul>
+</section>
+<section id="august-2023">
+<h2>[1.4.0] - August 2023<a class="headerlink" href="#august-2023" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Patch MIDI filter (filters MIDI for entire patch before it is routed to layers).</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Add “…” to some GUI menu items.</p></li>
+<li><p>When a new port/bus is added, activate editing its name.</p></li>
+<li><p>When an external app is added or edited, focus the app name text box.</p></li>
+<li><p>Fix patch list menu button left border radius.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Eliminate potential threading race conditions related to MIDI filters.</p></li>
+</ul>
+</section>
+<section id="may-2023">
+<h2>[1.3.1] - May 2023<a class="headerlink" href="#may-2023" title="Permalink to this headline"></a></h2>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix bug where adding a new (non-existing) audio input port to a patch added
+two layers.</p></li>
+</ul>
+</section>
+<section id="april-2023">
+<h2>[1.3.0] - April 2023<a class="headerlink" href="#april-2023" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>External apps editor and autostart and auto-restart options per external app.
+Status display of external apps is also improved.</p></li>
+<li><p>Confirmation prompt when quitting Konfyt.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Automatically load all patches and activate the first patch when loading a
+project.</p></li>
+<li><p>Allow multiple of the same MIDI-out and audio-in port layers per patch.</p></li>
+<li><p>When adding a new patch, switch to the newly added patch.</p></li>
+<li><p>Increase number of patch triggers from 8 to 16.</p></li>
+<li><p>Improve loading of all patches by simply loading patches in engine and not
+switching to each patch in order to trigger a load.</p></li>
+<li><p>Patch list is now resizable.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Add “exponential” back-off to LSCP (Linuxsampler) connection check timer to
+reduce GUI freezes when running Konfyt when the JACK server is not available.</p></li>
+<li><p>Improve internal ringbuffer class.</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>Load all patches button (as patches are now all automatically loaded when the
+project is loaded).</p></li>
+</ul>
+</section>
 <section id="january-2023">
-<h2>[1.2.2] - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline"></a></h2>
+<h2>[1.2.3] - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline"></a></h2>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix MIDI filter editor reverting changes when Apply is clicked.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>[1.2.2] - January 2023<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Update MIDI filter immediately while editing it in the GUI editor.</p></li>
@@ -215,7 +337,11 @@ some functionality like MIDI triggers and port reconnections to stop working.</p
 <p>Added</p>
 <ul class="simple">
 <li><p>Basic MIDI pickup for layer and master gain sliders. Range setting can be
-set in the Triggers page.</p></li>
+set on the Triggers screen.</p></li>
+</ul>
+<p>Changed</p>
+<ul class="simple">
+<li><p>Some small GUI and other tweaks.</p></li>
 </ul>
 </section>
 <section id="january-2021">
@@ -270,8 +396,8 @@ console MIDI output is enabled.</p></li>
 <li><p>Small GUI tweaks.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2>[1.1.1] - October 2020<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<section id="id2">
+<h2>[1.1.1] - October 2020<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Preview mode options: MIDI input port and channel, output bus.</p></li>
