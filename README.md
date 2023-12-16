@@ -3,7 +3,12 @@ Konfyt Documentation
 Digital Keyboard Workstation for Linux
 --------------------------------------
 
-This Sphinx documentation is hosted at https://konfyt.readthedocs.io
+This documentation is hosted on GitHub pages from the `docs` folder in this repo:
+
+https://noedigcode.github.io/konfyt-docs/
+
+(Old Sphinx documentation is hosted at https://konfyt.readthedocs.io but since
+they changed their build requirements it doesn't build correctly anymore.)
 
 Konfyt source code: https://github.com/noedigcode/konfyt
 
@@ -20,6 +25,12 @@ Building the documentation
   (A downloaded version is saved in the `_themes` directory for posterity.)
 
 - Build the documentation with `make html`
+
+- Build and copy the documentation to the `docs` dir (for GitHub pages):
+  `make github` (includes make html above)
+
+- Ensure the docs dir contains a `.nojekyll` file to prevent GitHub from trying
+  to process this.
 
 
 Conventions and rst cheatsheet
