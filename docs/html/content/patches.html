@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patches &mdash; Konfyt 1.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MIDI Filters" href="midi_filters.html" />
+    <link rel="prev" title="MIDI Triggers" href="triggers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Konfyt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports_and_buses.html">Ports and Buses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">MIDI Triggers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Patches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#layers">Layers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Konfyt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Patches</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/content/patches.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="patches">
+<h1>Patches<a class="headerlink" href="#patches" title="Permalink to this headline"></a></h1>
+<p>The main patch/layers view shows a list of patches and the currently active patch.</p>
+<p>Normally, audio and MIDI will only play from the currently active (currently
+visible) patch. Switching to another patch will deactivate the patch and activate
+the other patch. When switching away from a patch, audio output ports are faded
+out so a sudden audio drop isn’t heard.
+For instrument layers with MIDI input and audio output, their sound will continue
+to be heard if notes or a sustain pedal are being held down. When the notes or
+sustain pedal are lifted, the appropriate messages are passed to the inactive patch.</p>
+<p>A patch can be set as <em>always active</em> from the <em>Patch Menu</em>. This will keep the
+patch active even when you switch to other patches.</p>
+<p>Below the layers section is a <em>Note</em> section in which you can place text that
+will be saved with the patch.</p>
+<p>A patch has a MIDI filter (accessible from the <em>Patch Menu</em>) which filters the
+MIDI patch-wide before reaching any of the layers.</p>
+<section id="layers">
+<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline"></a></h2>
+<p>A patch consists of one or more layers. The following types of layers are
+possible:</p>
+<ul class="simple">
+<li><p>Instrument layers: SFZ or soundfont</p></li>
+<li><p>MIDI output port: routes MIDI from a MIDI input port to a MIDI output port.
+The layer is fixed to a MIDI output port. The MIDI input port can be selected.</p></li>
+<li><p>Audio input port layer: routes audio from an audio input port to an audio
+output bus. The layer is fixed to an audio input port. The output bus can be
+selected.</p></li>
+</ul>
+<p>Layers with MIDI input each have a MIDI filter and a script.</p>
+<p>MIDI output port layers have a <em>MIDI Send List</em>, which is a list of MIDI messages
+that will be sent out on the layer whenever the patch is activated.
+This is useful for switching programs or settings on external synths when
+activating a patch.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="triggers.html" class="btn btn-neutral float-left" title="MIDI Triggers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="midi_filters.html" class="btn btn-neutral float-right" title="MIDI Filters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects &mdash; Konfyt 1.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ports and Buses" href="ports_and_buses.html" />
+    <link rel="prev" title="Library" href="library.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Konfyt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#backups">Backups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ports_and_buses.html">Ports and Buses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">MIDI Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Konfyt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Projects</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/content/projects.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="projects">
+<h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline"></a></h1>
+<p>A Konfyt project contains the following:</p>
+<ul class="simple">
+<li><p>Patches (containing layers)</p></li>
+<li><p>Ports (MIDI and audio input and output ports) with corresponding connections</p></li>
+<li><p>List of external applications</p></li>
+<li><p>Triggers - actions that are triggered by MIDI events</p></li>
+<li><p>List of “Other JACK Connections”</p></li>
+</ul>
+<p>Each project is saved in its own directory. A project directory contains the
+project file (an XML file with a name ending with “.konfytproject”) and a
+“patches” folder containing the patches.</p>
+<section id="backups">
+<h2>Backups<a class="headerlink" href="#backups" title="Permalink to this headline"></a></h2>
+<p>Since Konfyt 1.5.0, when saving a project, a backup of the project is made
+before saving (presave) and after saving (postsave). Backups are placed in a
+“backup” subfolder in the project directory.</p>
+<p>Backups allow recovery of data when you accidentally made changes to the project
+or when when a project has been modified by other versions of Konfyt, causing
+some data to be lost.</p>
+<p>Konfyt versions are backwards compatible with project files of previous versions.
+However, when previous versions of Konfyt open a project file created with a
+later version, it will ignore any data that isn’t supported in that version and,
+when saving, that data will be discarded.</p>
+<p>By creating presave and postsave backups, this can hopefully be guarded against.
+When Konfyt (since version 1.5.0) opens a project of a later version and saves
+it, the presave backup will contain all the data of the later version that will
+be discarded by the save.</p>
+<p>When a previous version of Konfyt (that doesn’t yet do backups) opens
+a version 1.5.0+ project and saves it, no backup will be created, but the
+last saved version 1.5.0+ project will still be available as a postsave backup
+(that was created the last time the project was saved by a 1.5.0+ version of
+Konfyt).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="library.html" class="btn btn-neutral float-left" title="Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ports_and_buses.html" class="btn btn-neutral float-right" title="Ports and Buses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

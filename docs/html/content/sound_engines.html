@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound Engines &mdash; Konfyt 1.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use Cases" href="use_cases.html" />
+    <link rel="prev" title="Scripting" href="scripting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Konfyt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports_and_buses.html">Ports and Buses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">MIDI Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sound Engines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linuxsampler">Linuxsampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#carla">Carla</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Konfyt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Sound Engines</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/content/sound_engines.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sound-engines">
+<h1>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline"></a></h1>
+<p>Konfyt fundamentally uses JACK (the JACK Audio Connection Kit) for MIDI and audio.</p>
+<p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
+<p>Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
+still used Linuxsampler as a backend for playing SFZs. However, the Linuxsampler
+support became troublesome and (among other reasons) Carla moved to SFZero for
+handling SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
+support using the LSCP (Linuxsampler Control Protocol) library.</p>
+<p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
+Linuxsampler is used by default if no command-line arguments are specified.</p>
+<section id="linuxsampler">
+<h2>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline"></a></h2>
+<p>LSCP is used to communicate with Linuxsampler. At startup, if LSCP fails to
+initialise, it is assumed that Linuxsampler is not running and a Linuxsampler
+process is started. Then LSCP initialisation is retried.</p>
+<p>Linuxsampler audio and MIDI JACK engines are created. The JACK client name is
+derived from Konfyt’s JACK client name. If Linuxsampler engines with the same
+name already exists, it is assumed to be from a previous Konfyt instance that
+is no longer running and the engines and related SFZ instruments are removed
+before new ones are created for the current session.</p>
+<p>Multiple instances of Konfyt can coexist since JACK requires that each client
+have a unique name.</p>
+<p>When a SFZ layer is added in Konfyt, the instrument is loaded in Linuxsampler
+via LSCP. A MIDI port and two audio ports are created for the instrument in Linuxsampler.
+Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
+automatically connects these to the Linuxsampler ports in order to transfer MIDI and audio
+between Konfyt and Linuxsampler.</p>
+</section>
+<section id="carla">
+<h2>Carla<a class="headerlink" href="#carla" title="Permalink to this headline"></a></h2>
+<p>If the user wants to use Carla for SFZ support, the appropriate command-line
+argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
+<p>The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
+with Linuxsampler, using JACK ports.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scripting.html" class="btn btn-neutral float-left" title="Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="use_cases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

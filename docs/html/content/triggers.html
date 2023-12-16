@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIDI Triggers &mdash; Konfyt 1.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Patches" href="patches.html" />
+    <link rel="prev" title="Ports and Buses" href="ports_and_buses.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Konfyt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports_and_buses.html">Ports and Buses</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MIDI Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midi_filters.html">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_jack_connections.html">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_apps.html">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound_engines.html">Sound Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Konfyt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">MIDI Triggers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/content/triggers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="midi-triggers">
+<h1>MIDI Triggers<a class="headerlink" href="#midi-triggers" title="Permalink to this headline"></a></h1>
+<p>Konfyt allows MIDI triggers (similar to “MIDI learn” in other applications) to
+be set up in order to perform an action when the specified MIDI message is received.
+MIDI triggers are set up in the <em>Triggers</em> screen. Incoming MIDI messages are
+shown on the right and can be assigned to actions on the left by using the
+<em>Assign</em> button or by selecting the event and double-clicking on the action
+(or vice versa).</p>
+<p>Currently, triggers don’t take the source port into account, meaning MIDI messages
+matching the trigger from any port will trigger the associated action.</p>
+<p>When bank select messages (CC0 and CC32) are directly followed by a program
+change message, the messages are grouped together as one bank and program message.</p>
+<p>MIDI message values are interpreted corresponding to the action it is assigned.
+For actions such as gain, the absolute MIDI value is used. Pitchbend values are
+mapped to between 0 and 127. For other actions such as patch switching or toggling
+a setting, the action is only triggered if the MIDI message value is larger than
+zero. This eliminates double triggering when a button or note sends both 127 and
+zero when pressed.</p>
+<p>Triggers that relate to patch layers will only affect the layers of the currently active patch.</p>
+<p>In addition to actions/triggers, the <em>Triggers</em> screen contains additional options that are saved in the project:</p>
+<ul class="simple">
+<li><p><em>Program Change messages with no bank select switch patches</em>: When this is enabled, if a program change MIDI
+message is received on its own (without any preceding bank select messages), the patch will be changed based
+on the message program number.</p></li>
+<li><p><em>Slider MIDI Pickup Range</em> specifies the range in which sliders will jump to the value of received MIDI messages.
+A maximum range of 127 means that a slider will jump to any received MIDI message value. Lower ranges mean the
+slider will only jump to (“pickup”) the value when the difference between the slider value and the received
+MIDI message value is in the range.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ports_and_buses.html" class="btn btn-neutral float-left" title="Ports and Buses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="patches.html" class="btn btn-neutral float-right" title="Patches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
