@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konfyt 1.5.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> Konfyt
+          </a>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/intro">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/settings">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/library">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/projects">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/ports_and_buses">Ports and Buses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/triggers">MIDI Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/patches">Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/midi_filters">MIDI Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/other_jack_connections">Other JACK Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/external_apps">External Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/scripting">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/sound_engines">Sound Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/use_cases">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/known_issues">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-content/changelog">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Konfyt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Konfyt 1.5.0 documentation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="konfyt-documentation">
+<h1>Konfyt Documentation<a class="headerlink" href="#konfyt-documentation" title="Permalink to this headline"></a></h1>
+<p>Konfyt - Digital Keyboard Workstation for Linux</p>
+<div class="toctree-wrapper compound">
+<span id="document-content/intro"></span><section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<section id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline"></a></h3>
+<p>Konfyt is a digital keyboard workstation for Linux. It allows you to instantly
+switch between patches for live keyboard playing. Each patch can contain multiple
+layers of soundfont (SF2 or SFZ) instruments, as well as audio input ports from,
+and MIDI output ports to other apps or hardware. Konfyt also has a searchable
+library which scans your filesystem for instruments and lets you easily browse
+and search soundfont contents.</p>
+<p>Konfyt originally started out in 2014 as a library for soundfonts for quick
+viewing of contents since the existing methods was frustrating. From there it
+got SFZ support and eventually grew into a fully fledged live keyboard playing
+tool (“workstation”).</p>
+</section>
+<section id="concept">
+<h3>Concept<a class="headerlink" href="#concept" title="Permalink to this headline"></a></h3>
+<p>Konfyt is a stand-alone application that uses JACK for audio and MIDI input and
+output. Konfyt hosts SF2 and SFZ instruments and does audio and MIDI routing.
+Additional tasks such as effects and synth plugins must be done outside Konfyt
+by other software. Konfyt is designed to easily integrate into the Linux pro
+audio world. It allows you to use all your other JACK aware software while
+filling the gap of routing audio and MIDI in a very user friendly way with
+instant patch switching and other useful features geared towards live keyboard
+playing.</p>
+</section>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Scan filesystem for soundfonts and SFZs and organize it into a tree view for
+easy navigation.</p></li>
+<li><p>List soundfont contents (programs) by simply selecting a soundfont in the library.</p></li>
+<li><p>Search library for SFZs and soundfonts, including soundfont programs.</p></li>
+<li><p>Uninterrupted patch switching - when holding notes or sustain while switching
+patches, sound keeps on playing until release.</p></li>
+<li><p>Audio input ports, which can be inserted into patches as layers, allowing audio
+to be received from other applications or from system input.</p></li>
+<li><p>MIDI output ports, which can be inserted into patches as layers, allowing MIDI
+output to other applications or to hardware.</p></li>
+<li><p>Audio output buses, allowing the output of SFZ, soundfont and audio-in layers
+to be sent to different destinations.</p></li>
+<li><p>Port connections to other JACK clients are automatically persisted.</p></li>
+<li><p>Port connections between other JACK clients can also be set up to be kept
+disconnected (broken).</p></li>
+<li><p>Per layer MIDI filter including key zone, transpose, velocity filtering and
+MIDI CC filtering.</p></li>
+<li><p>(Experimental) scripting in JavaScript for processing MIDI per patch layer
+(since version 1.5.0).</p></li>
+<li><p>Assign MIDI triggers to actions such as switching patches and modifying layer
+volume, mute and solo.</p></li>
+<li><p>MIDI events (including Sysex messages) can automatically be sent to an output
+port when a patch is activated - useful to change programs and modes on an
+external synthesizer.</p></li>
+<li><p>Per project external application launcher. Add commands and arguments for all
+external applications associated with your project to a list to easily launch them.
+Application files can be saved to the project directory and referenced relative
+to the directory, allowing for everything contained in a single directory and
+remaining in tact when the directory is moved. External applications can be
+automatically started when opening a project and automatically restarted when
+they close/crash.</p></li>
+<li><p>Filesystem browser to quickly load SFZs and soundfonts from directories not in
+the library.</p></li>
+<li><p>Live mode in which some actions can be controlled with the computer keyboard.</p></li>
+<li><p>Panic button which, when activated, mutes all sounds, stops all MIDI and emits
+MIDI all-notes-off messages as well as pitchbend zero and sustain pedal zero.</p></li>
+<li><p>Scalable GUI which fits comfortably on a 1366x768 laptop display.</p></li>
+<li><p>Backups of the project are created when saving (since version 1.5.0).</p></li>
+</ul>
+</section>
+</section>
+<span id="document-content/settings"></span><section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline"></a></h2>
+<p>It is a good idea to fill in all the options in the settings screen.</p>
+<section id="projects-directory">
+<h3>Projects Directory<a class="headerlink" href="#projects-directory" title="Permalink to this headline"></a></h3>
+<p>This is the default directory for projects. This directory is scanned at startup
+and all the projects are listed in the projects Open menu for easy access.</p>
+<p>When saving a project you can seamlessly save it in this directory by accepting
+the proposed path when asked (or choose No to manually select a different path).</p>
+</section>
+<section id="file-manager">
+<h3>File Manager<a class="headerlink" href="#file-manager" title="Permalink to this headline"></a></h3>
+<p>The file manager entry is optional and is provided in case your default file
+manager doesn’t play along well. You can test it by right-clicking on one of the
+library items and clicking <em>Open in File Manager</em>. If you receive an error
+message from your file manager, specify your preferred file manager in settings
+(e.g. either dolphin, nautilus, thunar, pcmanfm, etc.).</p>
+</section>
+<section id="scanning-soundfonts-patches-and-sfz-directories">
+<h3>Scanning soundfonts, patches and SFZ directories<a class="headerlink" href="#scanning-soundfonts-patches-and-sfz-directories" title="Permalink to this headline"></a></h3>
+<p>The soundfonts, patches and samples directories specifiy the directories that
+will be scanned to populate the libarary.</p>
+<p>The <em>Apply and Rescan</em> button clears the library database and scans the specified
+directories and subdirectories for SFZs, GIGs, soundfonts (sf2) and patches.
+This may take a while, especially with big soundfonts as each soundfont is
+loaded with Fluidsynth in order to extract its program information.</p>
+<p>The <em>Apply and Quick Scan</em> button leaves the soundfonts that are already in the
+database intact and only scans and loads new files that are not yet in the database.</p>
+</section>
+</section>
+<span id="document-content/library"></span><section id="library">
+<h2>Library<a class="headerlink" href="#library" title="Permalink to this headline"></a></h2>
+<p>The library on the left-hand side of the Konfyt window provides quick access
+to patches, SFZ and soundfont instruments on your computer.</p>
+<p>To populate the library with instruments, a scan must first be performed from
+the settings screen. When you add new instruments to the directories, you have
+to initiate a scan again to refresh the library.</p>
+<p>The library organizes sounds using the subdirectories in the scanned folders.
+Thus, for easy navigation it is useful to sort your sounds into subfolders,
+for example using categories like Piano, Strings, Organs, Pads, etc.</p>
+<p>When selecting a soundfont, the list of programs appear below the library tree.
+By double-clicking on a soundfont program, a SFZ or a patch in the library,
+the instrument is added as a layer to the current patch.</p>
+<p>When searching the library, file names as well as program names within
+soundfonts are searched. When selecting a soundfont in the search results, only
+those programs that match the search terms are shown.</p>
+<section id="previewing">
+<h3>Previewing<a class="headerlink" href="#previewing" title="Permalink to this headline"></a></h3>
+<p>The <em>Preview</em> button toggles preview mode, allowing you to preview the currently
+selected library item without loading it into a project patch.
+MIDI input and audio output is routed to and from the selected instrument,
+based on the settings in the preview drop down menu.
+When preview mode is disabled, the instrument is unloaded.</p>
+</section>
+</section>
+<span id="document-content/projects"></span><section id="projects">
+<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline"></a></h2>
+<p>A Konfyt project contains the following:</p>
+<ul class="simple">
+<li><p>Patches (containing layers)</p></li>
+<li><p>Ports (MIDI and audio input and output ports) with corresponding connections</p></li>
+<li><p>List of external applications</p></li>
+<li><p>Triggers - actions that are triggered by MIDI events</p></li>
+<li><p>List of “Other JACK Connections”</p></li>
+</ul>
+<p>Each project is saved in its own directory. A project directory contains the
+project file (an XML file with a name ending with “.konfytproject”) and a
+“patches” folder containing the patches.</p>
+<section id="backups">
+<h3>Backups<a class="headerlink" href="#backups" title="Permalink to this headline"></a></h3>
+<p>Since Konfyt 1.5.0, when saving a project, a backup of the project is made
+before saving (presave) and after saving (postsave). Backups are placed in a
+“backup” subfolder in the project directory.</p>
+<p>Backups allow recovery of data when you accidentally made changes to the project
+or when when a project has been modified by other versions of Konfyt, causing
+some data to be lost.</p>
+<p>Konfyt versions are backwards compatible with project files of previous versions.
+However, when previous versions of Konfyt open a project file created with a
+later version, it will ignore any data that isn’t supported in that version and,
+when saving, that data will be discarded.</p>
+<p>By creating presave and postsave backups, this can hopefully be guarded against.
+When Konfyt (since version 1.5.0) opens a project of a later version and saves
+it, the presave backup will contain all the data of the later version that will
+be discarded by the save.</p>
+<p>When a previous version of Konfyt (that doesn’t yet do backups) opens
+a version 1.5.0+ project and saves it, no backup will be created, but the
+last saved version 1.5.0+ project will still be available as a postsave backup
+(that was created the last time the project was saved by a 1.5.0+ version of
+Konfyt).</p>
+</section>
+</section>
+<span id="document-content/ports_and_buses"></span><section id="ports-and-buses">
+<h2>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline"></a></h2>
+<p>Konfyt uses ports and buses to receive and send audio and MIDI.
+A bus is actually just an audio output port.
+Each port and bus directly relates to a JACK port and can be connected to JACK
+ports of other applications or hardware.</p>
+<p>Any port connections that are specified within Konfyt in the <em>Ports and Buses</em>
+screen are persistently maintained, even after other applications restart,
+hardware is reconnected or when disconnects are attempted from outside Konfyt.</p>
+<p>All ports and buses are set up in the <em>Ports and Buses</em> screen. They can then
+be assigned to patch layers as input/output in the patch/layer view, by using
+the menu buttons in each layer.</p>
+<section id="midi-input-ports">
+<h3>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline"></a></h3>
+<p>A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI controller
+(e.g. keyboard) or other applications.</p>
+<p>A MIDI input port also has its own MIDI filter, which filters all MIDI before it
+reaches any patches/layers. When a MIDI input port is selected on the <em>Ports and Buses</em>
+screen, a button appears below the connections list to access the MIDI filter settings.</p>
+<p>MIDI input is first routed through the port’s MIDI filter, then to active patches
+through their MIDI filters, and finally to all layers which have been set to use
+the port as input.</p>
+</section>
+<section id="audio-bus-output-port">
+<h3>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Permalink to this headline"></a></h3>
+<p>A bus is an audio output port which relates to 2 JACK audio ports (left and right).
+Audio buses output audio to other applications or to the system output.
+Each patch layer with audio output (instrument layers and audio layers) outputs
+to a specific bus.</p>
+<p>Although a new project contains a default <em>Master Bus</em>, this is merely a name and
+there is nothing special about it.</p>
+<p>An audio bus can be set to ignore (bypass) the global output volume. When an audio bus
+is selected on the <em>Ports and Buses</em> screen, a checkbox appears below the connections list
+to enable this. This is ideal for when you want to send some audio to another application
+for applying effects, and loop it back into Konfyt (return) for further routing.
+By enabling this option on the “send” bus, the audio level isn’t reduced by
+Konfyt’s Global Volume, preventing it from being reduced multiple times (each time
+the signal leaves Konfyt).</p>
+</section>
+<section id="midi-output-ports">
+<h3>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Permalink to this headline"></a></h3>
+<p>A MIDI output port sends MIDI out from Konfyt to another application or hardware.
+To use a MIDI output port, it is added as a layer in a patch.
+Thus, MIDI will only be sent to the port when a patch is active that contains a
+layer corresponding to the port.</p>
+</section>
+<section id="audio-input-ports">
+<h3>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Permalink to this headline"></a></h3>
+<p>An audio input port receives audio from other applications or hardware.
+To use an audio input port, it is added as a layer in a patch.
+Thus, audio will only be routed from an audio input port when a patch is active
+that contains a layer corresponding to that port.
+As a layer, it has its own gain slider and destination bus specific to that layer.</p>
+</section>
+</section>
+<span id="document-content/triggers"></span><section id="midi-triggers">
+<h2>MIDI Triggers<a class="headerlink" href="#midi-triggers" title="Permalink to this headline"></a></h2>
+<p>Konfyt allows MIDI triggers (similar to “MIDI learn” in other applications) to
+be set up in order to perform an action when the specified MIDI message is received.
+MIDI triggers are set up in the <em>Triggers</em> screen. Incoming MIDI messages are
+shown on the right and can be assigned to actions on the left by using the
+<em>Assign</em> button or by selecting the event and double-clicking on the action
+(or vice versa).</p>
+<p>Currently, triggers don’t take the source port into account, meaning MIDI messages
+matching the trigger from any port will trigger the associated action.</p>
+<p>When bank select messages (CC0 and CC32) are directly followed by a program
+change message, the messages are grouped together as one bank and program message.</p>
+<p>MIDI message values are interpreted corresponding to the action it is assigned.
+For actions such as gain, the absolute MIDI value is used. Pitchbend values are
+mapped to between 0 and 127. For other actions such as patch switching or toggling
+a setting, the action is only triggered if the MIDI message value is larger than
+zero. This eliminates double triggering when a button or note sends both 127 and
+zero when pressed.</p>
+<p>Triggers that relate to patch layers will only affect the layers of the currently active patch.</p>
+<p>In addition to actions/triggers, the <em>Triggers</em> screen contains additional options that are saved in the project:</p>
+<ul class="simple">
+<li><p><em>Program Change messages with no bank select switch patches</em>: When this is enabled, if a program change MIDI
+message is received on its own (without any preceding bank select messages), the patch will be changed based
+on the message program number.</p></li>
+<li><p><em>Slider MIDI Pickup Range</em> specifies the range in which sliders will jump to the value of received MIDI messages.
+A maximum range of 127 means that a slider will jump to any received MIDI message value. Lower ranges mean the
+slider will only jump to (“pickup”) the value when the difference between the slider value and the received
+MIDI message value is in the range.</p></li>
+</ul>
+</section>
+<span id="document-content/patches"></span><section id="patches">
+<h2>Patches<a class="headerlink" href="#patches" title="Permalink to this headline"></a></h2>
+<p>The main patch/layers view shows a list of patches and the currently active patch.</p>
+<p>Normally, audio and MIDI will only play from the currently active (currently
+visible) patch. Switching to another patch will deactivate the patch and activate
+the other patch. When switching away from a patch, audio output ports are faded
+out so a sudden audio drop isn’t heard.
+For instrument layers with MIDI input and audio output, their sound will continue
+to be heard if notes or a sustain pedal are being held down. When the notes or
+sustain pedal are lifted, the appropriate messages are passed to the inactive patch.</p>
+<p>A patch can be set as <em>always active</em> from the <em>Patch Menu</em>. This will keep the
+patch active even when you switch to other patches.</p>
+<p>Below the layers section is a <em>Note</em> section in which you can place text that
+will be saved with the patch.</p>
+<p>A patch has a MIDI filter (accessible from the <em>Patch Menu</em>) which filters the
+MIDI patch-wide before reaching any of the layers.</p>
+<section id="layers">
+<h3>Layers<a class="headerlink" href="#layers" title="Permalink to this headline"></a></h3>
+<p>A patch consists of one or more layers. The following types of layers are
+possible:</p>
+<ul class="simple">
+<li><p>Instrument layers: SFZ or soundfont</p></li>
+<li><p>MIDI output port: routes MIDI from a MIDI input port to a MIDI output port.
+The layer is fixed to a MIDI output port. The MIDI input port can be selected.</p></li>
+<li><p>Audio input port layer: routes audio from an audio input port to an audio
+output bus. The layer is fixed to an audio input port. The output bus can be
+selected.</p></li>
+</ul>
+<p>Layers with MIDI input each have a MIDI filter and a script.</p>
+<p>MIDI output port layers have a <em>MIDI Send List</em>, which is a list of MIDI messages
+that will be sent out on the layer whenever the patch is activated.
+This is useful for switching programs or settings on external synths when
+activating a patch.</p>
+</section>
+</section>
+<span id="document-content/midi_filters"></span><section id="midi-filters">
+<h2>MIDI Filters<a class="headerlink" href="#midi-filters" title="Permalink to this headline"></a></h2>
+<p>A MIDI filter filters and/or modifies MIDI messages. MIDI filters are available
+for MIDI input ports (on the <em>Ports and Buses</em> screen), patches (from the
+<em>Patch Menu</em>) and individual patch layers that have MIDI input.</p>
+<section id="velocity-map">
+<h3>Velocity Map<a class="headerlink" href="#velocity-map" title="Permalink to this headline"></a></h3>
+<p>The <em>Velocity Map</em> modifies incoming note velocities according to a mapping.
+The mapping is defined by a series of input velocities and a series of output
+velocities, separated with a semicolon:</p>
+<p><code class="docutils literal notranslate"><span class="pre">in1</span> <span class="pre">in2</span> <span class="pre">in3</span> <span class="pre">...</span> <span class="pre">inx;</span> <span class="pre">out1</span> <span class="pre">out2</span> <span class="pre">out3</span> <span class="pre">...</span> <span class="pre">outx</span></code></p>
+<p>where input values are mapped to the output values. Values in-between are linearly
+interpolated.</p>
+<p>Presets are provided for common velocity curves.</p>
+<p>With appropriate values, the map can also be set up to block notes with certain
+velocities, limit the minimum or maximum velocity or compress the velocity
+range.</p>
+<p>For instance, the following mapping limits the minimum velocity to 30, so notes
+softer than 30 will be raised to 30 while the rest are left unchanged:</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">30</span> <span class="pre">127;</span> <span class="pre">30</span> <span class="pre">30</span> <span class="pre">127</span></code></p>
+<p>The following mapping limits the maximum velocity to 100. All louder notes will
+be changed to 100.</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">100</span> <span class="pre">127;</span> <span class="pre">0</span> <span class="pre">100</span> <span class="pre">100</span></code></p>
+<p>This mapping will block all notes with a velocity lower than 50:</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">50</span> <span class="pre">50</span> <span class="pre">127;</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">50</span> <span class="pre">127</span></code></p>
+</section>
+</section>
+<span id="document-content/other_jack_connections"></span><section id="other-jack-connections">
+<h2>Other JACK Connections<a class="headerlink" href="#other-jack-connections" title="Permalink to this headline"></a></h2>
+<p>In the <em>Other Jack Connections</em> screen, JACK audio and MIDI port pairs between
+other clients (not belonging to Konfyt) can be set up as persistent connections or
+disconnections.</p>
+<p>Adding a port pair as a “make” will persistently keep the ports connected, even
+when another app tries to disconnected it, when other clients restart or when
+hardware devices are reconnected.</p>
+<p>Adding a port pair as a “break” will persistently keep the ports disconnected,
+i.e. break the connection.</p>
+</section>
+<span id="document-content/external_apps"></span><section id="external-applications">
+<h2>External Applications<a class="headerlink" href="#external-applications" title="Permalink to this headline"></a></h2>
+<p>The <em>External Applications</em> list allows you to store
+commands in a project for easily running external applications.
+An external application can be run on demand at any time, or can be set to
+start automatically when you open the project.
+You can also set to automatically relaunch an application when it stops (or
+crashes).</p>
+<p>In the external app editor, the <em>Name</em> text box specifies a friendly name that
+will be dispayed in the list, but has nothing to do with the app.</p>
+<p>The <em>Command</em> text box contains the command and arguments that will be run when
+the app is launched. You can edit this text manually. Its drop down menu contains
+useful preset applications and other options.</p>
+<p>In the external app command, the string <code class="docutils literal notranslate"><span class="pre">$PROJ_DIR$</span></code> will be replaced by the
+current project directory.
+This can be used to make a project more self-contained (and insensitive to being
+moved around) by storing files used by external applications in the Konfyt
+project directory and using the above string in arguments for the commands.</p>
+<p>In the <em>Filesystem</em> tab on the left-hand side of the Konfyt window, you can
+right-click on any file or directory and use one of the
+<em>Add Path to External App Command</em> entries to easily add paths to the external
+app command.</p>
+</section>
+<span id="document-content/scripting"></span><section id="scripting">
+<h2>Scripting<a class="headerlink" href="#scripting" title="Permalink to this headline"></a></h2>
+<p>JavaScript scripting was added as an experiment in Konfyt version 1.5.0.</p>
+<p>Patch layers with MIDI input have optional scripts that can process incoming MIDI events.</p>
+<p>Scripts are evaluated in a separate thread from the GUI and JACK processing threads.
+This means that scripts will not affect normal non-script MIDI and audio processing
+or freeze the GUI.</p>
+<p>This does mean, however, that script processing is not strictly real-time.
+However, initial testing hasn’t found any noticeable delay or other issues.</p>
+<p>Scripts are accessible by selecting “Edit Script” from a layer’s menu. This shows
+the script editor.</p>
+<p>By default a layer’s script is disabled, meaning no processing is happening
+with regards to that script.</p>
+<p>Each script has a “Pass Original MIDI Through” option which sets whether all
+incoming MIDI is sent to the output in in parallel with the script, or whether
+incoming MIDI is blocked and only passed to the script.</p>
+<p>The scripting API documentation is given in Konfyt next to the script editor.</p>
+<p>Each enabled script will receive MIDI events after they have passed through
+the layer’s MIDI filter. MIDI events sent from the script with <code class="docutils literal notranslate"><span class="pre">Midi.send()</span></code>
+are sent to the layer’s assigned output port.</p>
+<p>Currently it is not possible to
+handle notes, sustain and pitchbend in the same way as normal non-script MIDI
+events when changing patches. Thus, when a script outputs a note-on, sustain
+or pitchbend message, and another patch is activated, no corresponding note-off,
+sustain zero or pitchbend zero messages will be sent.</p>
+<p>A script must define two functions that are called by Konfyt: <code class="docutils literal notranslate"><span class="pre">init()</span></code> and <code class="docutils literal notranslate"><span class="pre">midiEvent(ev)</span></code>.
+When a script is enabled or updated, the <code class="docutils literal notranslate"><span class="pre">init</span></code> function is called once.
+For each incoming MIDI message, the <code class="docutils literal notranslate"><span class="pre">midiEvent</span></code> function is called where the
+<code class="docutils literal notranslate"><span class="pre">ev</span></code> argument is the incoming MIDI message.</p>
+<p>When execution of a script takes too long, a script is stopped and not executed
+for further incoming MIDI events, until it is updated or enabled again.
+The same is done when an error occurs during evaluation.
+When this happens, information is output in the console and a warning is displayed
+in the <em>Warnings</em> list in the right-hand side of the Konfyt window. Double-clicking
+on the warning will open the corresponding script editor.</p>
+<p>Scripts are referred to with a short ID (or URI) in the format <code class="docutils literal notranslate"><span class="pre">PxLy</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">x</span></code> refers to the patch number starting at 1, and <code class="docutils literal notranslate"><span class="pre">y</span></code> refers to the
+layer number starting at 1. “P3L5” refers to the script of layer 5 in patch 3.</p>
+</section>
+<span id="document-content/sound_engines"></span><section id="sound-engines">
+<h2>Sound Engines<a class="headerlink" href="#sound-engines" title="Permalink to this headline"></a></h2>
+<p>Konfyt fundamentally uses JACK (the JACK Audio Connection Kit) for MIDI and audio.</p>
+<p>Fluidsynth is used to load, inspect and play sf2 soundfont files.</p>
+<p>Konfyt initially used only Carla for handling SFZ instruments. At the time, Carla
+still used Linuxsampler as a backend for playing SFZs. However, the Linuxsampler
+support became troublesome and (among other reasons) Carla moved to SFZero for
+handling SFZ. Finding the SFZ support of SFZero lacking, I implemented Linuxsampler
+support using the LSCP (Linuxsampler Control Protocol) library.</p>
+<p>Currently Konfyt supports both Carla and Linuxsampler backends for SFZ.
+Linuxsampler is used by default if no command-line arguments are specified.</p>
+<section id="linuxsampler">
+<h3>Linuxsampler<a class="headerlink" href="#linuxsampler" title="Permalink to this headline"></a></h3>
+<p>LSCP is used to communicate with Linuxsampler. At startup, if LSCP fails to
+initialise, it is assumed that Linuxsampler is not running and a Linuxsampler
+process is started. Then LSCP initialisation is retried.</p>
+<p>Linuxsampler audio and MIDI JACK engines are created. The JACK client name is
+derived from Konfyt’s JACK client name. If Linuxsampler engines with the same
+name already exists, it is assumed to be from a previous Konfyt instance that
+is no longer running and the engines and related SFZ instruments are removed
+before new ones are created for the current session.</p>
+<p>Multiple instances of Konfyt can coexist since JACK requires that each client
+have a unique name.</p>
+<p>When a SFZ layer is added in Konfyt, the instrument is loaded in Linuxsampler
+via LSCP. A MIDI port and two audio ports are created for the instrument in Linuxsampler.
+Konfyt also creates MIDI and audio ports specifically for the SFZ layer and
+automatically connects these to the Linuxsampler ports in order to transfer MIDI and audio
+between Konfyt and Linuxsampler.</p>
+</section>
+<section id="carla">
+<h3>Carla<a class="headerlink" href="#carla" title="Permalink to this headline"></a></h3>
+<p>If the user wants to use Carla for SFZ support, the appropriate command-line
+argument must be passed to Konfyt at startup. Use <code class="docutils literal notranslate"><span class="pre">--help</span></code> for more details.</p>
+<p>The Carla backend runs inside Konfyt but MIDI and audio are exchanged similar to
+with Linuxsampler, using JACK ports.</p>
+</section>
+</section>
+<span id="document-content/use_cases"></span><section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline"></a></h2>
+<section id="the-first-steps">
+<h3>The first steps<a class="headerlink" href="#the-first-steps" title="Permalink to this headline"></a></h3>
+<p>Perform these steps to set up Konfyt and get going:</p>
+<ol class="arabic simple">
+<li><p>Specify paths in Settings and let your instrument directories be scanned to
+fill the library.</p></li>
+<li><p>In the <em>Ports and Busses</em> screen, assign a client to the MIDI input port.
+Access to ALSA hardware can be gained by using the command
+<code class="docutils literal notranslate"><span class="pre">a2jmidid</span> <span class="pre">-e</span> <span class="pre">-u</span></code>
+It is also useful to add this command to the <em>External Applications</em> list so
+it can easily be run next time.</p></li>
+<li><p>Test MIDI input by watching the MIDI receive indicator at the top right or by
+selecting <em>Show MIDI Messages</em> at the console and watching the console.</p></li>
+<li><p>In the <em>Ports and Busses</em> screen, connect the audio bus(es) to system output
+or JACK clients.</p></li>
+<li><p>Add a SFZ or soundfont layer to the patch and test your audio.</p></li>
+<li><p>Remember to enter a project name and save often!</p></li>
+</ol>
+</section>
+<section id="example-with-zynaddsubfx-and-ardour">
+<h3>Example with ZynAddSubFX and Ardour<a class="headerlink" href="#example-with-zynaddsubfx-and-ardour" title="Permalink to this headline"></a></h3>
+<p>Konfyt doesn’t attempt to do everything itself but works in harmony with other
+JACK aware applications. This example shows how Konfyt can be used in combination
+with a stand-alone synth application and a plugin host.</p>
+<ol class="arabic">
+<li><p>Create a new Konfyt project, connect the MIDI input port, verify that you
+receive MIDI and save the project.</p>
+<p>Take note of the project path. If you forgot, you can quickly find it by
+clicking the <em>Project Directory</em> button in the <em>Filesystem</em> tab on the
+left-hand side of the Konfyt window.</p>
+</li>
+<li><p>Launch ZynAddSubFX and select or create a desired preset.</p></li>
+<li><p>Save your ZynAddSubFX session (File-&gt;Save All Parameters…) to your Konfyt
+project directory as “zyn_lead.xmz” for example.</p></li>
+<li><p>In Konfyt, navigate to the saved file in the <em>Filesystem</em> tab, right-click on
+it and select <em>Add Path To External App Box (Relative to Project)</em>.</p>
+<p>The <em>External Applications</em> text box should now contain something like
+“$PROJ_DIR$/zyn_lead.xmz”.</p>
+</li>
+<li><p>Add “zynaddsubfx -l ” to the beginning of the text. The -l argument tells Zyn
+you want to load the file.</p></li>
+<li><p>Now, in the event that you might use another instance of ZynAddSubFX,
+you want the JACK port names of this instance to be uniquely identifiable and
+remain the same across sessions. To ensure this, add ” -N zyn_lead” at the
+end of the command. This makes ZynAddSubFX append the “zyn_lead” string to
+its port names.</p>
+<p>The command should now look like this:
+<code class="docutils literal notranslate"><span class="pre">zynaddsubfx</span> <span class="pre">-l</span> <span class="pre">&quot;$PROJ_DIR$/zyn_lead.xmz&quot;</span> <span class="pre">-N</span> <span class="pre">zyn_lead</span></code></p>
+</li>
+<li><p>Click <em>Add</em> to add it to the list.</p></li>
+<li><p>Close ZynAddSubFX. Then double-click on the newly added entry in the
+<em>External Applications</em> list to test it. ZynAddSubFX should start up with the
+appropriate settings loaded from the file.</p></li>
+<li><p>In the <em>Ports and Busses</em> screen, add a new MIDI output port, name it
+“zyn lead send” and connect it to the ZynAddSubFX midi_input port.</p></li>
+<li><p>Add an audio input port, name it “zyn lead return” and connect it to the
+ZynAddSubFX out_1 and out_2 ports.</p></li>
+<li><p>Create a new patch and add the newly created MIDI output port and audio input
+port as layers. When you play notes, MIDI is now sent to Zyn and the audio is
+returned to Konfyt. The audio is routed to the output bus specified in the
+audio input port layer.</p></li>
+<li><p>Now, we might want to apply some effects like reverb and EQ to the Zyn audio.
+Open a plugin host, for example Ardour. Create a new project, saving it to
+the Konfyt project directory and adding it as an external application command
+like before. (Note that the -l and -N arguments that were used above are
+specific to Zyn and not applicable to Ardour.)</p></li>
+<li><p>In Ardour, create an audio bus and add reverb and/or other effects plugins to it.</p></li>
+<li><p>In Konfyt, in the <em>Ports and Busses</em> screen, add a bus, naming it “Ardour Effects”
+for example and selecting the Ardour audio bus/track as its clients to connect to.</p></li>
+<li><p>In the patch, on the audio input port layer, click the <em>Bus</em> button on the
+right hand side and select the newly created bus. Now, the audio from Zyn will
+be routed to Ardour for some cool effects.</p></li>
+</ol>
+<p>Remember to save your Konfyt project regularly.</p>
+<p>When done, close Konfyt, Ardour and Zyn, re-open Konfyt, launch Ardour and Zyn
+from the <em>External Applications</em> list and test that everything still works.
+If everything was set up correctly, the JACK port connections should automatically
+be connected and everything should work as before.</p>
+</section>
+<section id="more-ideas">
+<h3>More ideas<a class="headerlink" href="#more-ideas" title="Permalink to this headline"></a></h3>
+<p>Some applications that might augment your workflow with Konfyt are:</p>
+<ul class="simple">
+<li><p>Carla, Ardour and other plugin hosts.</p></li>
+<li><p>mididings, QMidiRoute for more advanced MIDI filtering and routing.</p></li>
+<li><p>a2jmidid with the <code class="docutils literal notranslate"><span class="pre">-e</span></code> argument to get access to ALSA hardware and software MIDI
+ports and the <code class="docutils literal notranslate"><span class="pre">-u</span></code> argument to remove ALSA port numbers from port names.</p></li>
+</ul>
+</section>
+</section>
+<span id="document-content/known_issues"></span><section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline"></a></h2>
+<section id="midi-triggers-not-working-when-screen-locked">
+<h3>MIDI Triggers not working when screen locked<a class="headerlink" href="#midi-triggers-not-working-when-screen-locked" title="Permalink to this headline"></a></h3>
+<p>2021-08-23, Linux Mint 20.2, Xfce, Light Locker, Qt 5.12.8</p>
+<p>When the screen is locked, MIDI triggers do not work and the actions are only
+performed once the screen is unlocked.</p>
+<p>This is due to a Qt bug causing the GUI and timers to stop while the screen is
+locked.</p>
+<div class="line-block">
+<div class="line">A workaround is to set the following environment variable before running Konfyt:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">QT_XCB_GL_INTEGRATION=none</span></code></div>
+</div>
+<p>Discussions on this Qt bug can be found here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list">https://bugreports.qt.io/browse/QTBUG-47179?attachmentViewMode=list</a></p></li>
+<li><p><a class="reference external" href="https://bugs.freedesktop.org/show_bug.cgi?id=91448">https://bugs.freedesktop.org/show_bug.cgi?id=91448</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/206">https://gitlab.freedesktop.org/xorg/xserver/-/issues/206</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/497">https://gitlab.freedesktop.org/xorg/xserver/-/issues/497</a></p></li>
+</ul>
+</section>
+<section id="no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2">
+<h3>No sound, JACK complains that it can’t allocate memory, crash (pre v1.2.2)<a class="headerlink" href="#no-sound-jack-complains-that-it-can-t-allocate-memory-crash-pre-v1-2-2" title="Permalink to this headline"></a></h3>
+<div class="line-block">
+<div class="line">If the following is printed when running Konfyt from a console:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">lock</span> <span class="pre">down</span> <span class="pre">82280346</span> <span class="pre">byte</span> <span class="pre">memory</span> <span class="pre">area</span> <span class="pre">(Cannot</span> <span class="pre">allocate</span> <span class="pre">memory)</span></code></div>
+<div class="line">along with potentially other memory or realtime related messages, your system may not be configured correctly for realtime audio work.</div>
+</div>
+<p>Two probable culprits are that your user may not be in the <code class="docutils literal notranslate"><span class="pre">audio</span></code> group, and
+that your <code class="docutils literal notranslate"><span class="pre">ulimits</span></code> file may not be set up correctly.</p>
+<p>The rtcqs script from <a class="reference external" href="https://codeberg.org/rtcqs/rtcqs">https://codeberg.org/rtcqs/rtcqs</a> can be used to check
+whether your system is set up properly. Follow the guidelines in the script
+(especially related to the above mentioned) to make the required changes.</p>
+</section>
+</section>
+<span id="document-content/changelog"></span><section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h2>
+<section id="december-2023">
+<h3>1.5.0 - December 2023<a class="headerlink" href="#december-2023" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>MIDI scripting for patch layers.</p></li>
+<li><p>Other JACK connections can now also break a connection, keeping the ports
+disconnected.</p></li>
+<li><p>Create project backups when saving a project.
+Backups are created in a backup subdirectory in the project directory. Two
+backups are created - one before saving, and one after saving. This ensures
+data is backed up in the case the project is opened by a previous version of
+Konfyt that does not do backups and throws away data related to newer features.</p></li>
+<li><p>Live mode shortcut keys to change layer gains.</p></li>
+<li><p>Time for each console print message.</p></li>
+<li><p>Option in settings to open last project at startup.</p></li>
+<li><p>Save window maximized state when quitting and restore at startup.</p></li>
+<li><p>Command-line option to start minimized.</p></li>
+<li><p>Ask before saving project in a non-empty directory.</p></li>
+<li><p>Menu entry in filesystem context menu to copy path.</p></li>
+<li><p>Menu entries in external app editor to browse for file and directory.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Disable GUI buttons when they are not applicable: external apps, Other JACK
+Connections page, Triggers page</p></li>
+<li><p>Improve layout of Ports and Buses, Triggers and Other JACK Connections pages.
+Widgets are more elegantly aligned now.</p></li>
+<li><p>Console popout dialog changed to window, allowing it to be maximized and treated
+like other normal windows.</p></li>
+<li><p>Increase external app editor width to maximum available space.</p></li>
+<li><p>Appearance: Colours of most GUI container elements and dialogs darker and
+consolidated. Dialog group box styles more modern and subdued. Layouts of
+widgets revised in several places.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix crash when exiting while an external app is still running.</p></li>
+<li><p>Handle pitchbend correctly for triggers, mapping it to 0-127.</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>Statusbar</p></li>
+</ul>
+</section>
+<section id="august-2023">
+<h3>[1.4.0] - August 2023<a class="headerlink" href="#august-2023" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Patch MIDI filter (filters MIDI for entire patch before it is routed to layers).</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Add “…” to some GUI menu items.</p></li>
+<li><p>When a new port/bus is added, activate editing its name.</p></li>
+<li><p>When an external app is added or edited, focus the app name text box.</p></li>
+<li><p>Fix patch list menu button left border radius.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Eliminate potential threading race conditions related to MIDI filters.</p></li>
+</ul>
+</section>
+<section id="may-2023">
+<h3>[1.3.1] - May 2023<a class="headerlink" href="#may-2023" title="Permalink to this headline"></a></h3>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix bug where adding a new (non-existing) audio input port to a patch added
+two layers.</p></li>
+</ul>
+</section>
+<section id="april-2023">
+<h3>[1.3.0] - April 2023<a class="headerlink" href="#april-2023" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>External apps editor and autostart and auto-restart options per external app.
+Status display of external apps is also improved.</p></li>
+<li><p>Confirmation prompt when quitting Konfyt.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Automatically load all patches and activate the first patch when loading a
+project.</p></li>
+<li><p>Allow multiple of the same MIDI-out and audio-in port layers per patch.</p></li>
+<li><p>When adding a new patch, switch to the newly added patch.</p></li>
+<li><p>Increase number of patch triggers from 8 to 16.</p></li>
+<li><p>Improve loading of all patches by simply loading patches in engine and not
+switching to each patch in order to trigger a load.</p></li>
+<li><p>Patch list is now resizable.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Add “exponential” back-off to LSCP (Linuxsampler) connection check timer to
+reduce GUI freezes when running Konfyt when the JACK server is not available.</p></li>
+<li><p>Improve internal ringbuffer class.</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>Load all patches button (as patches are now all automatically loaded when the
+project is loaded).</p></li>
+</ul>
+</section>
+<section id="january-2023">
+<h3>[1.2.3] - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline"></a></h3>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix MIDI filter editor reverting changes when Apply is clicked.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>[1.2.2] - January 2023<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Update MIDI filter immediately while editing it in the GUI editor.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix library item double-click working intermittently on some systems.</p></li>
+<li><p>Destination audio port null check to prevent crash when JACK/system is not
+configured correctly. (When JACK can’t allocate memory due to user not
+belonging to audio group or ulimits not being set up correctly. Note that
+in this case the audio system is not functioning correctly in any case.)</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>About dialog is now integrated into the main window.</p></li>
+<li><p>MIDI filter editor size constraints and scrollability removed for hopefully
+better layout across different systems.</p></li>
+</ul>
+</section>
+<section id="october-2022">
+<h3>[1.2.1] - October 2022<a class="headerlink" href="#october-2022" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Checkbox in filesystem view to show hidden files.</p></li>
+<li><p>Add dropdown menu to filesystem view path text box with common paths and remove
+home and current project buttons.</p></li>
+<li><p>Warn when running an external app with a project directory replacement tag in
+the command if the project has not been saved yet.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Remove dot at end of project folder names when saved to default project location.</p></li>
+<li><p>Use the correct project directory when running an external app that was added
+before the project was saved.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Insert new patches after currently selected patch when adding new or copying a
+patch.</p></li>
+<li><p>Show a menu when the remove patch button is clicked to serve as a confirmation.</p></li>
+<li><p>Print slightly less alarming message in console when MIDI map presets file or
+settings file does not exist.</p></li>
+<li><p>When running an app from the external app list, print the expanded name if it
+contains a $PROJ_DIR$ and print a message when an external app stops.</p></li>
+</ul>
+</section>
+<section id="july-2022">
+<h3>[1.2.0] - July 2022<a class="headerlink" href="#july-2022" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Patch list drag and drop for re-ordering patches.</p></li>
+<li><p>Detect Linuxsampler process crash and automatically restart.</p></li>
+<li><p>Soundfont scanning for library is now done in a separate process so Fluidsynth
+crashes due to malformed soundfonts don’t affect Konfyt.</p></li>
+<li><p>Pitchbend up and down ranges in MIDI filter.</p></li>
+<li><p>Add CC block-list to MIDI filter.</p></li>
+<li><p>Note velocity mapping with graph and presets in MIDI filter.</p></li>
+<li><p>Escape key returns to main patch view.</p></li>
+<li><p>Library context menu to remove patch from library.</p></li>
+<li><p>When a patch is selected in the library, show info and layers below library.</p></li>
+<li><p>Add liblscp version to about text.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Apply patch list number/note show/hide setting when loading a project.</p></li>
+<li><p>Change volume when master volume slider is moved without using the mouse.</p></li>
+<li><p>Only relay noteoff messages to GUI (e.g. in console or received MIDI events lists)
+if it actually resulted in a noteoff message being sent.</p></li>
+<li><p>MIDI send list editor now only shows received MIDI events for the corresponding
+layer.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>When console/main window not available any more (e.g. during program exit),
+send print output to stdout.</p></li>
+<li><p>CC allow-list in MIDI filter is now space-separated text.</p></li>
+<li><p>Entire top toolbar area becomes red to emphasise when Panic is activated.</p></li>
+<li><p>Patches in library view don’t show file extension any more.</p></li>
+<li><p>Some code housekeeping and refactoring.</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>MIDI filter note velocity limits - replaced by velocity mapping.</p></li>
+</ul>
+</section>
+<section id="january-2022">
+<h3>[1.1.7] - January 2022<a class="headerlink" href="#january-2022" title="Permalink to this headline"></a></h3>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Set QT_XCB_GL_INTEGRATION=none environment variable at startup to prevent
+event loop from stopping when screen is locked on some systems which caused
+some functionality like MIDI triggers and port reconnections to stop working.</p></li>
+<li><p>Fix .gig file loading.</p></li>
+</ul>
+</section>
+<section id="october-2021">
+<h3>[1.1.6] - October 2021<a class="headerlink" href="#october-2021" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Filesystem view now supports previewing of instruments like the library.</p></li>
+<li><p>Global transpose keyboard shortcuts added to live mode.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Pitchbend now works if Carla backend is used to play SFZ files.</p></li>
+<li><p>Fix SF2 loading from command-line arguments.</p></li>
+<li><p>Fix global volume up action getting stuck due to rounding errors.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>Some GUI tweaks in the patch layer view and library/filesystem preview.</p></li>
+<li><p>Misc code refactoring, cleanup and fixes.</p></li>
+</ul>
+</section>
+<section id="july-2021">
+<h3>[1.1.5] - July 2021<a class="headerlink" href="#july-2021" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Ignore global transpose option in layer MIDI filter</p></li>
+<li><p>Ignore global volume option for buses (checkbox on Ports and Buses screen)</p></li>
+</ul>
+</section>
+<section id="april-2021">
+<h3>[1.1.4] - April 2021<a class="headerlink" href="#april-2021" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Basic MIDI pickup for layer and master gain sliders. Range setting can be
+set on the Triggers screen.</p></li>
+</ul>
+<p>Changed</p>
+<ul class="simple">
+<li><p>Some small GUI and other tweaks.</p></li>
+</ul>
+</section>
+<section id="january-2021">
+<h3>[1.1.3] - January 2021<a class="headerlink" href="#january-2021" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Per-layer audio output indicator</p></li>
+<li><p>Two Konfyt instances can now run in parallel, nicely sharing Linuxsampler</p></li>
+<li><p>Orphaned Linuxsampler channels and devices (due to previous app instance crash)
+are now cleaned up at startup</p></li>
+<li><p>MIDI output port layer output (right-hand side) button now has link to port connections</p></li>
+<li><p>Xrun messages show time since last xrun</p></li>
+<li><p>Patch layers can now be reordered</p></li>
+</ul>
+<p>Removed</p>
+<ul class="simple">
+<li><p>Removed multi-project tabs. They were rarely (never?) used, buggy and
+resulted in unnecessary maintenance. Multiple app instances can be used
+instead.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Fix crash when loading sfz file if Linuxsampler is not installed</p></li>
+<li><p>Fix copying a patch pointing to original patch layers</p></li>
+<li><p>Fix always-active patch volume not changed by global volume when other patch is active</p></li>
+<li><p>SFZ engine startup delay handled better, fixes loading sfz files through
+command-line when Linuxsampler is not running yet</p></li>
+<li><p>Fix CC value not loaded correctly for MIDI Send Events</p></li>
+</ul>
+<p>Changed</p>
+<ul class="simple">
+<li><p>Patch list behaviour and interaction improved</p></li>
+<li><p>Code cleanup and organisation, largely concerning the database</p></li>
+<li><p>Window title is now Patch - Project [Jack Client Name]</p></li>
+<li><p>Sustain indication in GUI has threshold of 64</p></li>
+<li><p>Bank/program messages received now handled per port and channel</p></li>
+<li><p>MIDI filter screen last received messages only shown from associated port/layer</p></li>
+</ul>
+</section>
+<section id="october-2020">
+<h3>[1.1.2] - October 2020<a class="headerlink" href="#october-2020" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).</p></li>
+<li><p>Global sustain and pitchbend non-zero indicators.</p></li>
+</ul>
+<p>Changed</p>
+<ul class="simple">
+<li><p>Fairly big code refactor under the hood, should not be noticeable to users.</p></li>
+<li><p>Fix bug of empty MIDI input ports added after removal of non-last port while
+console MIDI output is enabled.</p></li>
+<li><p>Small GUI tweaks.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>[1.1.1] - October 2020<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<p>Added</p>
+<ul class="simple">
+<li><p>Preview mode options: MIDI input port and channel, output bus.</p></li>
+<li><p>MIDI input port and bus menus now have a link to the connections page.</p></li>
+<li><p>Save-as finally implemented.</p></li>
+<li><p>Compatible with Carla 2.2.0 (API change)</p></li>
+</ul>
+<p>Changed</p>
+<ul class="simple">
+<li><p>Default global and layer gain (volume) is now 1.0.</p></li>
+<li><p>SF3 soundfonts are now detected and loaded.</p></li>
+<li><p>Current setting is marked in MIDI channel/port/bus menus</p></li>
+<li><p>Small GUI tweaks.</p></li>
+</ul>
+</section>
+<section id="december-2019">
+<h3>[1.1.0] - December 2019<a class="headerlink" href="#december-2019" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Each patch can be set to send MIDI events to other apps/hardware when activated
+and sysex messages are also now supported. MIDI send events can be saved for
+reuse in other projects.</p></li>
+<li><p>Fluidsynth 2 is also now supported.</p></li>
+<li><p>Config files are now saved to standard XDG directories.</p></li>
+<li><p>Carla support is now optional.</p></li>
+</ul>
+</section>
+<section id="beta-october-2019">
+<h3>[1.1.0-beta] - October 2019<a class="headerlink" href="#beta-october-2019" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>MIDI send events: each MIDI output layer can have MIDI send events associated
+with it which are sent when the patch is activated. MIDI send events can also
+be saved for future use in other projects.</p></li>
+<li><p>MIDI note names octave numbers changed to the IPN standard to match most other
+software numbering.</p></li>
+<li><p>Always-active option for patches: a patch can be set to always be active, even
+if it is not the current patch.</p></li>
+<li><p>GUI uses system specified font size and resizes properly based on font size.</p></li>
+</ul>
+</section>
+</section>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Gideon van der Kolf.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
