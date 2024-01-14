@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Konfyt'
-copyright = '2023, Gideon van der Kolf'
+copyright = '2024, Gideon van der Kolf'
 author = 'Gideon van der Kolf'
 
 # The full version, including alpha/beta/rc tags
-release = '1.5.0'
+release = '1.6.0'
 
 # The master toctree document.
 master_doc = 'index'
