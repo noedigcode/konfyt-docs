@@ -82,24 +82,30 @@
              
   <section id="scripting">
 <h1>Scripting<a class="headerlink" href="#scripting" title="Permalink to this headline"></a></h1>
-<p>JavaScript scripting was added as an experiment in Konfyt version 1.5.0.</p>
-<p>Patch layers with MIDI input have optional scripts that can process incoming MIDI events.</p>
+<p>JavaScript scripting for patch layers was added as an experiment in Konfyt version 1.5.0.</p>
+<p>Scripting for MIDI input ports was added in version 1.6.0.</p>
+<p>Patch layers with MIDI input and MIDI input ports have optional scripts that can
+process incoming MIDI events. Script processing happens after MIDI filters. For
+ports, script processing also happens before MIDI is sent to triggers and patches.</p>
 <p>Scripts are evaluated in a separate thread from the GUI and JACK processing threads.
 This means that scripts will not affect normal non-script MIDI and audio processing
 or freeze the GUI.</p>
 <p>This does mean, however, that script processing is not strictly real-time.
 However, initial testing hasn’t found any noticeable delay or other issues.</p>
-<p>Scripts are accessible by selecting “Edit Script” from a layer’s menu. This shows
-the script editor.</p>
-<p>By default a layer’s script is disabled, meaning no processing is happening
+<p>For patch layers, scripts are accessible by selecting “Edit Script” from the
+layer’s menu (left-hand side button). For MIDI input ports, when the port is
+selected on the <em>Ports and Buses</em> screen, a button to access
+the script editor for the port appears below the connections list.</p>
+<p>By default, scripts are disabled, meaning no processing is happening
 with regards to that script.</p>
 <p>Each script has a “Pass Original MIDI Through” option which sets whether all
 incoming MIDI is sent to the output in in parallel with the script, or whether
 incoming MIDI is blocked and only passed to the script.</p>
 <p>The scripting API documentation is given in Konfyt next to the script editor.</p>
 <p>Each enabled script will receive MIDI events after they have passed through
-the layer’s MIDI filter. MIDI events sent from the script with <code class="docutils literal notranslate"><span class="pre">Midi.send()</span></code>
-are sent to the layer’s assigned output port.</p>
+the layer’s or port’s MIDI filter. MIDI events sent from the script with
+<code class="docutils literal notranslate"><span class="pre">Midi.send()</span></code> are sent down the chain. For layers, events are sent to the
+layer’s assigned output port. For ports, events are sent to triggers and patches.</p>
 <p>Currently it is not possible to
 handle notes, sustain and pitchbend in the same way as normal non-script MIDI
 events when changing patches. Thus, when a script outputs a note-on, sustain
@@ -115,7 +121,7 @@ The same is done when an error occurs during evaluation.
 When this happens, information is output in the console and a warning is displayed
 in the <em>Warnings</em> list in the right-hand side of the Konfyt window. Double-clicking
 on the warning will open the corresponding script editor.</p>
-<p>Scripts are referred to with a short ID (or URI) in the format <code class="docutils literal notranslate"><span class="pre">PxLy</span></code>,
+<p>Patch layer scripts are referred to with a short ID (or URI) in the format <code class="docutils literal notranslate"><span class="pre">PxLy</span></code>,
 where <code class="docutils literal notranslate"><span class="pre">x</span></code> refers to the patch number starting at 1, and <code class="docutils literal notranslate"><span class="pre">y</span></code> refers to the
 layer number starting at 1. “P3L5” refers to the script of layer 5 in patch 3.</p>
 </section>

@@ -59,7 +59,7 @@ Features
   MIDI CC filtering.
 
 * (Experimental) scripting in JavaScript for processing MIDI per patch layer
-  (since version 1.5.0).
+  (since version 1.5.0) and for MIDI input ports (since version 1.6.0).
 
 * Assign MIDI triggers to actions such as switching patches and modifying layer 
   volume, mute and solo.

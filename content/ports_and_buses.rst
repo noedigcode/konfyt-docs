@@ -25,6 +25,11 @@ A MIDI input port also has its own MIDI filter, which filters all MIDI before it
 reaches any patches/layers. When a MIDI input port is selected on the *Ports and Buses*
 screen, a button appears below the connections list to access the MIDI filter settings.
 
+Scripting was introduced for MIDI input ports in Konfyt version 1.6.0. This allows
+MIDI messages to be processed in a script after the MIDI filter, before it is sent
+to triggers and patches. When a MIDI input port is selected on the *Ports and Buses*
+screen, a button appears below the connections list to edit the script.
+
 MIDI input is first routed through the port's MIDI filter, then to active patches
 through their MIDI filters, and finally to all layers which have been set to use
 the port as input.
