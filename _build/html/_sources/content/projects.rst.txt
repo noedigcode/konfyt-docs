@@ -23,7 +23,7 @@ before saving (presave) and after saving (postsave). Backups are placed in a
 "backup" subfolder in the project directory.
 
 Backups allow recovery of data when you accidentally made changes to the project
-or when when a project has been modified by other versions of Konfyt, causing
+or when a project has been modified by other versions of Konfyt, causing
 some data to be lost.
 
 Konfyt versions are backwards compatible with project files of previous versions.

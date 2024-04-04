@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects &mdash; Konfyt 1.6.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=72d88caf"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Konfyt
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Konfyt
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -72,7 +79,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Projects</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/projects.rst.txt" rel="nofollow"> View page source</a>
@@ -84,7 +91,7 @@
            <div itemprop="articleBody">
              
   <section id="projects">
-<h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline"></a></h1>
+<h1>Projects<a class="headerlink" href="#projects" title="Link to this heading"></a></h1>
 <p>A Konfyt project contains the following:</p>
 <ul class="simple">
 <li><p>Patches (containing layers)</p></li>
@@ -97,12 +104,12 @@
 project file (an XML file with a name ending with “.konfytproject”) and a
 “patches” folder containing the patches.</p>
 <section id="backups">
-<h2>Backups<a class="headerlink" href="#backups" title="Permalink to this headline"></a></h2>
+<h2>Backups<a class="headerlink" href="#backups" title="Link to this heading"></a></h2>
 <p>Since Konfyt 1.5.0, when saving a project, a backup of the project is made
 before saving (presave) and after saving (postsave). Backups are placed in a
 “backup” subfolder in the project directory.</p>
 <p>Backups allow recovery of data when you accidentally made changes to the project
-or when when a project has been modified by other versions of Konfyt, causing
+or when a project has been modified by other versions of Konfyt, causing
 some data to be lost.</p>
 <p>Konfyt versions are backwards compatible with project files of previous versions.
 However, when previous versions of Konfyt open a project file created with a
