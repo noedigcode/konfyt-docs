@@ -1,6 +1,27 @@
 Changelog
 =========
 
+[1.6.1] - April 2024
+--------------------
+
+Added
+
+- Script editor sidebar tab listing scripts of other projects in the default
+  projects directory.
+
+Changes
+
+- MIDI port connection check boxes are now in their own "MIDI" column and the
+  audio "L" and "R" columns have been renamed to "Left" and "Right".
+
+Fixes
+
+- Clear triggers when loading new project to prevent left-over triggers from
+  the previously loaded project.
+- Limit prints and MIDI sends from scripts in a cycle so infinite loops containing
+  these don't stall the application.
+
+
 [1.6.0] - January 2024
 ----------------------
 

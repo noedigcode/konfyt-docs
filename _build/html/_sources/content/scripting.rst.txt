@@ -1,13 +1,15 @@
 Scripting
 #########
 
-JavaScript scripting for patch layers was added as an experiment in Konfyt version 1.5.0.
+JavaScript scripts can be created to process MIDI for patch layers with MIDI input
+and MIDI input ports.
+
+Scripting for patch layers was added as an experiment in Konfyt version 1.5.0.
 
 Scripting for MIDI input ports was added in version 1.6.0.
 
-Patch layers with MIDI input and MIDI input ports have optional scripts that can
-process incoming MIDI events. Script processing happens after MIDI filters. For
-ports, script processing also happens before MIDI is sent to triggers and patches.
+Script processing for patch layers and ports happen after MIDI filters. For
+ports, script processing happens before MIDI is sent to triggers and patches.
 
 Scripts are evaluated in a separate thread from the GUI and JACK processing threads.
 This means that scripts will not affect normal non-script MIDI and audio processing
@@ -56,4 +58,9 @@ on the warning will open the corresponding script editor.
 Patch layer scripts are referred to with a short ID (or URI) in the format ``PxLy``,
 where ``x`` refers to the patch number starting at 1, and ``y`` refers to the
 layer number starting at 1. "P3L5" refers to the script of layer 5 in patch 3.
+
+Since Konfyt 1.6.1, the left sidebar in the script editor provides a tab with a
+list of scripts from other projects in the default projects directory. This is
+a handy way of finding scripts from other projects for reuse. When a script is
+selected, its content is shown below which can be copied to the script editor.
 

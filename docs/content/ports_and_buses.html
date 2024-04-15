@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ports and Buses &mdash; Konfyt 1.6.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=72d88caf"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -30,15 +27,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Konfyt
+            <a href="../index.html" class="icon icon-home"> Konfyt
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -82,7 +75,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Ports and Buses</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/ports_and_buses.rst.txt" rel="nofollow"> View page source</a>
@@ -94,7 +87,7 @@
            <div itemprop="articleBody">
              
   <section id="ports-and-buses">
-<h1>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Link to this heading"></a></h1>
+<h1>Ports and Buses<a class="headerlink" href="#ports-and-buses" title="Permalink to this headline"></a></h1>
 <p>Konfyt uses ports and buses to receive and send audio and MIDI.
 A bus is actually just an audio output port.
 Each port and bus directly relates to a JACK port and can be connected to JACK
@@ -106,7 +99,7 @@ hardware is reconnected or when disconnects are attempted from outside Konfyt.</
 be assigned to patch layers as input/output in the patch/layer view, by using
 the menu buttons in each layer.</p>
 <section id="midi-input-ports">
-<h2>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Link to this heading"></a></h2>
+<h2>MIDI Input Ports<a class="headerlink" href="#midi-input-ports" title="Permalink to this headline"></a></h2>
 <p>A MIDI input port is how Konfyt receives MIDI input from a hardware MIDI controller
 (e.g. keyboard) or other applications.</p>
 <p>A MIDI input port also has its own MIDI filter, which filters all MIDI before it
@@ -121,7 +114,7 @@ through their MIDI filters, and finally to all layers which have been set to use
 the port as input.</p>
 </section>
 <section id="audio-bus-output-port">
-<h2>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Link to this heading"></a></h2>
+<h2>Audio Bus (Output Port)<a class="headerlink" href="#audio-bus-output-port" title="Permalink to this headline"></a></h2>
 <p>A bus is an audio output port which relates to 2 JACK audio ports (left and right).
 Audio buses output audio to other applications or to the system output.
 Each patch layer with audio output (instrument layers and audio layers) outputs
@@ -137,14 +130,14 @@ Konfyt’s Global Volume, preventing it from being reduced multiple times (each 
 the signal leaves Konfyt).</p>
 </section>
 <section id="midi-output-ports">
-<h2>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Link to this heading"></a></h2>
+<h2>MIDI Output Ports<a class="headerlink" href="#midi-output-ports" title="Permalink to this headline"></a></h2>
 <p>A MIDI output port sends MIDI out from Konfyt to another application or hardware.
 To use a MIDI output port, it is added as a layer in a patch.
 Thus, MIDI will only be sent to the port when a patch is active that contains a
 layer corresponding to the port.</p>
 </section>
 <section id="audio-input-ports">
-<h2>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Link to this heading"></a></h2>
+<h2>Audio Input Ports<a class="headerlink" href="#audio-input-ports" title="Permalink to this headline"></a></h2>
 <p>An audio input port receives audio from other applications or hardware.
 To use an audio input port, it is added as a layer in a patch.
 Thus, audio will only be routed from an audio input port when a patch is active

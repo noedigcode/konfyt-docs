@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Use Cases &mdash; Konfyt 1.6.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=72d88caf"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -30,15 +27,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Konfyt
+            <a href="../index.html" class="icon icon-home"> Konfyt
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Use Cases</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/use_cases.rst.txt" rel="nofollow"> View page source</a>
@@ -93,9 +86,9 @@
            <div itemprop="articleBody">
              
   <section id="use-cases">
-<h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading"></a></h1>
+<h1>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline"></a></h1>
 <section id="the-first-steps">
-<h2>The first steps<a class="headerlink" href="#the-first-steps" title="Link to this heading"></a></h2>
+<h2>The first steps<a class="headerlink" href="#the-first-steps" title="Permalink to this headline"></a></h2>
 <p>Perform these steps to set up Konfyt and get going:</p>
 <ol class="arabic simple">
 <li><p>Specify paths in Settings and let your instrument directories be scanned to
@@ -114,7 +107,7 @@ or JACK clients.</p></li>
 </ol>
 </section>
 <section id="example-with-zynaddsubfx-and-ardour">
-<h2>Example with ZynAddSubFX and Ardour<a class="headerlink" href="#example-with-zynaddsubfx-and-ardour" title="Link to this heading"></a></h2>
+<h2>Example with ZynAddSubFX and Ardour<a class="headerlink" href="#example-with-zynaddsubfx-and-ardour" title="Permalink to this headline"></a></h2>
 <p>Konfyt doesn’t attempt to do everything itself but works in harmony with other
 JACK aware applications. This example shows how Konfyt can be used in combination
 with a stand-alone synth application and a plugin host.</p>
@@ -133,11 +126,11 @@ it and select <em>Add Path To External App Box (Relative to Project)</em>.</p>
 <p>The <em>External Applications</em> text box should now contain something like
 “$PROJ_DIR$/zyn_lead.xmz”.</p>
 </li>
-<li><p>Add “zynaddsubfx -l “ to the beginning of the text. The -l argument tells Zyn
+<li><p>Add “zynaddsubfx -l ” to the beginning of the text. The -l argument tells Zyn
 you want to load the file.</p></li>
 <li><p>Now, in the event that you might use another instance of ZynAddSubFX,
 you want the JACK port names of this instance to be uniquely identifiable and
-remain the same across sessions. To ensure this, add “ -N zyn_lead” at the
+remain the same across sessions. To ensure this, add ” -N zyn_lead” at the
 end of the command. This makes ZynAddSubFX append the “zyn_lead” string to
 its port names.</p>
 <p>The command should now look like this:
@@ -174,7 +167,7 @@ If everything was set up correctly, the JACK port connections should automatical
 be connected and everything should work as before.</p>
 </section>
 <section id="more-ideas">
-<h2>More ideas<a class="headerlink" href="#more-ideas" title="Link to this heading"></a></h2>
+<h2>More ideas<a class="headerlink" href="#more-ideas" title="Permalink to this headline"></a></h2>
 <p>Some applications that might augment your workflow with Konfyt are:</p>
 <ul class="simple">
 <li><p>Carla, Ardour and other plugin hosts.</p></li>

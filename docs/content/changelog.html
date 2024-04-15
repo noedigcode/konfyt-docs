@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Changelog &mdash; Konfyt 1.6.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=72d88caf"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +26,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Konfyt
+            <a href="../index.html" class="icon icon-home"> Konfyt
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -60,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known_issues.html">Known Issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#april-2024">[1.6.1] - April 2024</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#january-2024">[1.6.0] - January 2024</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#december-2023">[1.5.0] - December 2023</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#august-2023">[1.4.0] - August 2023</a></li>
@@ -95,7 +89,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Changelog</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/content/changelog.rst.txt" rel="nofollow"> View page source</a>
@@ -107,9 +101,29 @@
            <div itemprop="articleBody">
              
   <section id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h1>
+<section id="april-2024">
+<h2>[1.6.1] - April 2024<a class="headerlink" href="#april-2024" title="Permalink to this headline"></a></h2>
+<p>Added</p>
+<ul class="simple">
+<li><p>Script editor sidebar tab listing scripts of other projects in the default
+projects directory.</p></li>
+</ul>
+<p>Changes</p>
+<ul class="simple">
+<li><p>MIDI port connection check boxes are now in their own “MIDI” column and the
+audio “L” and “R” columns have been renamed to “Left” and “Right”.</p></li>
+</ul>
+<p>Fixes</p>
+<ul class="simple">
+<li><p>Clear triggers when loading new project to prevent left-over triggers from
+the previously loaded project.</p></li>
+<li><p>Limit prints and MIDI sends from scripts in a cycle so infinite loops containing
+these don’t stall the application.</p></li>
+</ul>
+</section>
 <section id="january-2024">
-<h2>[1.6.0] - January 2024<a class="headerlink" href="#january-2024" title="Link to this heading"></a></h2>
+<h2>[1.6.0] - January 2024<a class="headerlink" href="#january-2024" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>MIDI input port scripts.</p></li>
@@ -134,7 +148,7 @@ double-clicked while the script editor was already visible.</p></li>
 </ul>
 </section>
 <section id="december-2023">
-<h2>[1.5.0] - December 2023<a class="headerlink" href="#december-2023" title="Link to this heading"></a></h2>
+<h2>[1.5.0] - December 2023<a class="headerlink" href="#december-2023" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>MIDI scripting for patch layers.</p></li>
@@ -178,7 +192,7 @@ widgets revised in several places.</p></li>
 </ul>
 </section>
 <section id="august-2023">
-<h2>[1.4.0] - August 2023<a class="headerlink" href="#august-2023" title="Link to this heading"></a></h2>
+<h2>[1.4.0] - August 2023<a class="headerlink" href="#august-2023" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Patch MIDI filter (filters MIDI for entire patch before it is routed to layers).</p></li>
@@ -196,7 +210,7 @@ widgets revised in several places.</p></li>
 </ul>
 </section>
 <section id="may-2023">
-<h2>[1.3.1] - May 2023<a class="headerlink" href="#may-2023" title="Link to this heading"></a></h2>
+<h2>[1.3.1] - May 2023<a class="headerlink" href="#may-2023" title="Permalink to this headline"></a></h2>
 <p>Fixes</p>
 <ul class="simple">
 <li><p>Fix bug where adding a new (non-existing) audio input port to a patch added
@@ -204,7 +218,7 @@ two layers.</p></li>
 </ul>
 </section>
 <section id="april-2023">
-<h2>[1.3.0] - April 2023<a class="headerlink" href="#april-2023" title="Link to this heading"></a></h2>
+<h2>[1.3.0] - April 2023<a class="headerlink" href="#april-2023" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>External apps editor and autostart and auto-restart options per external app.
@@ -235,14 +249,14 @@ project is loaded).</p></li>
 </ul>
 </section>
 <section id="january-2023">
-<h2>[1.2.3] - January 2023<a class="headerlink" href="#january-2023" title="Link to this heading"></a></h2>
+<h2>[1.2.3] - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline"></a></h2>
 <p>Fixes</p>
 <ul class="simple">
 <li><p>Fix MIDI filter editor reverting changes when Apply is clicked.</p></li>
 </ul>
 </section>
 <section id="id1">
-<h2>[1.2.2] - January 2023<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>[1.2.2] - January 2023<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Update MIDI filter immediately while editing it in the GUI editor.</p></li>
@@ -263,7 +277,7 @@ better layout across different systems.</p></li>
 </ul>
 </section>
 <section id="october-2022">
-<h2>[1.2.1] - October 2022<a class="headerlink" href="#october-2022" title="Link to this heading"></a></h2>
+<h2>[1.2.1] - October 2022<a class="headerlink" href="#october-2022" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Checkbox in filesystem view to show hidden files.</p></li>
@@ -290,7 +304,7 @@ contains a $PROJ_DIR$ and print a message when an external app stops.</p></li>
 </ul>
 </section>
 <section id="july-2022">
-<h2>[1.2.0] - July 2022<a class="headerlink" href="#july-2022" title="Link to this heading"></a></h2>
+<h2>[1.2.0] - July 2022<a class="headerlink" href="#july-2022" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Patch list drag and drop for re-ordering patches.</p></li>
@@ -329,7 +343,7 @@ send print output to stdout.</p></li>
 </ul>
 </section>
 <section id="january-2022">
-<h2>[1.1.7] - January 2022<a class="headerlink" href="#january-2022" title="Link to this heading"></a></h2>
+<h2>[1.1.7] - January 2022<a class="headerlink" href="#january-2022" title="Permalink to this headline"></a></h2>
 <p>Fixes</p>
 <ul class="simple">
 <li><p>Set QT_XCB_GL_INTEGRATION=none environment variable at startup to prevent
@@ -339,7 +353,7 @@ some functionality like MIDI triggers and port reconnections to stop working.</p
 </ul>
 </section>
 <section id="october-2021">
-<h2>[1.1.6] - October 2021<a class="headerlink" href="#october-2021" title="Link to this heading"></a></h2>
+<h2>[1.1.6] - October 2021<a class="headerlink" href="#october-2021" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Filesystem view now supports previewing of instruments like the library.</p></li>
@@ -358,7 +372,7 @@ some functionality like MIDI triggers and port reconnections to stop working.</p
 </ul>
 </section>
 <section id="july-2021">
-<h2>[1.1.5] - July 2021<a class="headerlink" href="#july-2021" title="Link to this heading"></a></h2>
+<h2>[1.1.5] - July 2021<a class="headerlink" href="#july-2021" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Ignore global transpose option in layer MIDI filter</p></li>
@@ -366,7 +380,7 @@ some functionality like MIDI triggers and port reconnections to stop working.</p
 </ul>
 </section>
 <section id="april-2021">
-<h2>[1.1.4] - April 2021<a class="headerlink" href="#april-2021" title="Link to this heading"></a></h2>
+<h2>[1.1.4] - April 2021<a class="headerlink" href="#april-2021" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Basic MIDI pickup for layer and master gain sliders. Range setting can be
@@ -378,7 +392,7 @@ set on the Triggers screen.</p></li>
 </ul>
 </section>
 <section id="january-2021">
-<h2>[1.1.3] - January 2021<a class="headerlink" href="#january-2021" title="Link to this heading"></a></h2>
+<h2>[1.1.3] - January 2021<a class="headerlink" href="#january-2021" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Per-layer audio output indicator</p></li>
@@ -415,7 +429,7 @@ command-line when Linuxsampler is not running yet</p></li>
 </ul>
 </section>
 <section id="october-2020">
-<h2>[1.1.2] - October 2020<a class="headerlink" href="#october-2020" title="Link to this heading"></a></h2>
+<h2>[1.1.2] - October 2020<a class="headerlink" href="#october-2020" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Per-layer MIDI indicators (activity, sustain and pitchbend non-zero).</p></li>
@@ -430,7 +444,7 @@ console MIDI output is enabled.</p></li>
 </ul>
 </section>
 <section id="id2">
-<h2>[1.1.1] - October 2020<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<h2>[1.1.1] - October 2020<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
 <p>Added</p>
 <ul class="simple">
 <li><p>Preview mode options: MIDI input port and channel, output bus.</p></li>
@@ -447,7 +461,7 @@ console MIDI output is enabled.</p></li>
 </ul>
 </section>
 <section id="december-2019">
-<h2>[1.1.0] - December 2019<a class="headerlink" href="#december-2019" title="Link to this heading"></a></h2>
+<h2>[1.1.0] - December 2019<a class="headerlink" href="#december-2019" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Each patch can be set to send MIDI events to other apps/hardware when activated
 and sysex messages are also now supported. MIDI send events can be saved for
@@ -458,7 +472,7 @@ reuse in other projects.</p></li>
 </ul>
 </section>
 <section id="beta-october-2019">
-<h2>[1.1.0-beta] - October 2019<a class="headerlink" href="#beta-october-2019" title="Link to this heading"></a></h2>
+<h2>[1.1.0-beta] - October 2019<a class="headerlink" href="#beta-october-2019" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>MIDI send events: each MIDI output layer can have MIDI send events associated
 with it which are sent when the patch is activated. MIDI send events can also
